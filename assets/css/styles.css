@@ -79,12 +79,17 @@ textarea {
 }
 
 .topbar__inner {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__row {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 18px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--line);
 }
 
 .brand {
@@ -116,6 +121,38 @@ textarea {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.topbar__nav {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.topbar__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.topbar__link {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(23, 38, 47, 0.08);
+  background: rgba(255, 253, 248, 0.72);
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.topbar__link.is-active {
+  border-color: rgba(13, 123, 112, 0.2);
+  background: rgba(13, 123, 112, 0.08);
+  color: var(--accent);
 }
 
 .pill {
@@ -926,7 +963,7 @@ textarea {
     width: min(calc(100% - 28px), var(--container));
   }
 
-  .topbar__inner,
+  .topbar__row,
   .article-head__grid,
   .article-head__facts,
   .editorial-grid,
@@ -936,7 +973,7 @@ textarea {
     grid-template-columns: 1fr;
   }
 
-  .topbar__inner {
+  .topbar__row {
     gap: 14px;
   }
 

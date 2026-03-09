@@ -50,19 +50,41 @@ function getPageTitle(data, page) {
 }
 
 function renderTopbar(data) {
+  const links = [
+    { id: "index", href: "./index.html", label: "Home" },
+    { id: "day1", href: "./day1.html", label: "Day 1" },
+    { id: "day2", href: "./day2.html", label: "Day 2" },
+    { id: "day3", href: "./day3.html", label: "Day 3" },
+    { id: "day4", href: "./day4.html", label: "Day 4" },
+    { id: "safety", href: "./safety.html", label: "Safety" }
+  ];
+
   return `
     <header class="topbar">
       <div class="topbar__inner">
-        <div class="brand">
-          <span class="brand__eyebrow">Taipei Slow Trip Notes</span>
-          <strong class="brand__title">${data.site.title}</strong>
-          <span class="brand__meta">${data.site.window} · ${data.site.lodging}</span>
+        <div class="topbar__row">
+          <div class="brand">
+            <span class="brand__eyebrow">Taipei Slow Trip Notes</span>
+            <strong class="brand__title">${data.site.title}</strong>
+            <span class="brand__meta">${data.site.window} · ${data.site.lodging}</span>
+          </div>
+          <div class="status-strip">
+            <span class="pill">입국 픽업 완료</span>
+            <span class="pill pill--warm">3/15 22:00 출국 샌딩 완료</span>
+            <span class="pill pill--neutral">저강도 동선 기준</span>
+          </div>
         </div>
-        <div class="status-strip">
-          <span class="pill">입국 픽업 완료</span>
-          <span class="pill pill--warm">3/15 22:00 출국 샌딩 완료</span>
-          <span class="pill pill--neutral">저강도 동선 기준</span>
-        </div>
+        <nav class="topbar__nav" aria-label="상단 페이지 이동">
+          ${links
+            .map(
+              (link) => `
+                <a class="topbar__link ${link.id === currentPage ? "is-active" : ""}" href="${link.href}">
+                  ${link.label}
+                </a>
+              `
+            )
+            .join("")}
+        </nav>
       </div>
     </header>
   `;
