@@ -54,7 +54,7 @@ function renderTopbar(data) {
     <header class="topbar">
       <div class="topbar__inner">
         <div class="brand">
-          <span class="brand__eyebrow">Taipei Slow Trip Webbook</span>
+          <span class="brand__eyebrow">Taipei Slow Trip Notes</span>
           <strong class="brand__title">${data.site.title}</strong>
           <span class="brand__meta">${data.site.window} · ${data.site.lodging}</span>
         </div>
@@ -93,7 +93,7 @@ function renderIndex(data) {
       eyebrow: "타이베이 커플 가이드",
       category: "3박 4일 저강도 여행 설계",
       area: "닝샤 야시장 베이스",
-      title: "실제로 쓰기 좋은\n타이베이 여행 가이드북",
+      title: "천천히 보고 오래 남기는\n타이베이 3박 4일",
       lead: data.site.summary,
       image: data.site.heroImage,
       facts: [
@@ -116,14 +116,14 @@ function renderIndex(data) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">여행 개요</p>
-          <h2 class="section__title">빠르게 읽는 일정 요약</h2>
-          <p class="section__desc">관광지 숫자를 늘리기보다, 숙소 복귀가 쉽고 식사 타이밍을 관리하기 쉬운 동선만 남겼습니다.</p>
+          <h2 class="section__title">첫 장에서 읽는 여행의 결</h2>
+          <p class="section__desc">많이 보는 여행이 아니라, 오래 걷지 않아도 장면이 남는 순서로 정리했습니다.</p>
         </div>
       </div>
       <div class="editorial-grid">
         ${renderArticleBrief(
-          "핵심 요약",
-          "첫날은 회복, 둘째 날은 Beitou 온천권, 셋째 날은 Tamsui 강변, 마지막 날은 새벽 귀국 루틴으로 구성했습니다.",
+          "편집 노트",
+          "첫 장면은 대도정의 오후, 둘째 장면은 Beitou의 김과 Shilin의 정원, 마지막 바깥 장면은 Tamsui 강변의 바람으로 정리했습니다.",
           [
             "택시와 MRT를 섞어 계단과 장거리 도보를 줄였습니다.",
             "식사는 실내 좌석 확보, 기름기 조절, 당 보충 가능 여부를 우선했습니다.",
@@ -131,8 +131,8 @@ function renderIndex(data) {
           ]
         )}
         <div class="article-brief article-brief--muted">
-          <span class="article-brief__label">일정 운용 원칙</span>
-          <p class="article-brief__summary">여행 중에는 컨디션 관리가 일정 완성도보다 우선입니다. 무릎, 당 조절, 위장 부담을 고려해 아래 기준을 고정합니다.</p>
+          <span class="article-brief__label">느리게 움직이는 규칙</span>
+          <p class="article-brief__summary">여행의 완성도보다 하루를 끝낼 때의 표정이 더 중요하다는 전제로 움직입니다. 무릎, 당 조절, 위장 부담을 고려해 아래 기준을 고정합니다.</p>
           <ul class="outline-list">
             <li class="outline-list__item">오전 시작은 늦춰도 되지만 야간 무리 일정은 추가하지 않기</li>
             <li class="outline-list__item">30~60분마다 앉을 수 있는 장소를 먼저 확보하기</li>
@@ -146,8 +146,8 @@ function renderIndex(data) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">루트 한눈에 보기</p>
-          <h2 class="section__title">날짜별 이동 흐름</h2>
-          <p class="section__desc">참고한 여행 기사처럼, 먼저 전체 순서를 보고 세부 페이지로 들어가도록 구성했습니다.</p>
+          <h2 class="section__title">날짜별 장면과 리듬</h2>
+          <p class="section__desc">먼저 전체 흐름을 보고, 각 날짜의 무드와 휴식 타이밍을 페이지별로 이어 읽는 구조입니다.</p>
         </div>
       </div>
       ${renderRouteOverview(dayOverview)}
@@ -160,8 +160,8 @@ function renderIndex(data) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">건강·준비</p>
-          <h2 class="section__title">출발 전에 고정할 운영 메모</h2>
-          <p class="section__desc">의료 조언이 아니라, 실제 여행 중 결정을 단순하게 만들기 위한 행동 기준입니다.</p>
+          <h2 class="section__title">출발 전에 마음을 가볍게 만드는 메모</h2>
+          <p class="section__desc">의료 조언이 아니라, 낯선 도시에서 결정을 단순하게 만들기 위한 여행 운영 기준입니다.</p>
         </div>
       </div>
       <div class="editorial-grid editorial-grid--compact">
@@ -188,8 +188,8 @@ function renderIndex(data) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">핵심 링크</p>
-          <h2 class="section__title">현장에서 바로 열 링크</h2>
-          <p class="section__desc">Google Maps 앵커와 안전 페이지를 한곳에 모아, 찾느라 시간을 쓰지 않게 했습니다.</p>
+          <h2 class="section__title">현장에선 이 링크만 열면 됩니다</h2>
+          <p class="section__desc">Google Maps 앵커와 안전 페이지를 한곳에 모아, 찾느라 리듬이 끊기지 않게 했습니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -227,15 +227,15 @@ function renderDay(data, day) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">오늘의 개요</p>
-          <h2 class="section__title">150자 대신 필요한 정보만 요약</h2>
-          <p class="section__desc">이 페이지는 긴 설명보다, 실제 이동 순서와 쉬는 타이밍을 빠르게 판단할 수 있게 구성했습니다.</p>
+          <h2 class="section__title">오늘의 무드와 운영 포인트</h2>
+          <p class="section__desc">긴 설명보다, 오늘 어떤 장면을 남기고 어디서 쉬어야 하는지만 빠르게 보이게 정리했습니다.</p>
         </div>
       </div>
       <div class="editorial-grid">
         ${renderArticleBrief("오늘의 루트", day.routeSummary, day.headlines)}
         <div class="article-brief article-brief--muted">
           <span class="article-brief__label">이동 메모</span>
-          <p class="article-brief__summary">전체 동선은 Google Maps 앵커와 함께 보면 더 명확합니다. 현장 판단이 필요할 때는 바로 택시로 전환하는 것이 이 일정의 전제입니다.</p>
+          <p class="article-brief__summary">전체 동선은 Google Maps 앵커와 함께 보면 훨씬 선명해집니다. 현장에서 흐름이 끊기면 곧바로 택시로 바꾸는 것이 이 일정의 기본값입니다.</p>
           <div class="cta-row cta-row--editorial">
             <a class="editorial-link" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">전체 동선 Google Maps</a>
           </div>
@@ -247,8 +247,8 @@ function renderDay(data, day) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">루트 한눈에 보기</p>
-          <h2 class="section__title">시간대별 정차 포인트</h2>
-          <p class="section__desc">참고 페이지의 여행 코스 기사처럼, 먼저 순서를 확인하고 각 구간별 실전 정보로 내려갑니다.</p>
+          <h2 class="section__title">시간대별 장면</h2>
+          <p class="section__desc">먼저 흐름을 보고, 각 구간에서 무엇을 줄이고 무엇을 남길지 바로 판단할 수 있게 구성했습니다.</p>
         </div>
       </div>
       ${renderRouteOverview(
@@ -267,8 +267,8 @@ function renderDay(data, day) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">음식·휴식</p>
-          <h2 class="section__title">식당과 쉬는 포인트</h2>
-          <p class="section__desc">줄이 길거나 향이 강한 곳은 제외하고, 좌석 확보와 회복에 유리한 장소만 남겼습니다.</p>
+          <h2 class="section__title">앉아서 쉬기 좋은 식탁과 카페</h2>
+          <p class="section__desc">줄이 길거나 향이 강한 곳은 덜어내고, 좌석 확보와 회복에 유리한 장소만 남겼습니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -280,8 +280,8 @@ function renderDay(data, day) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">실전 정보</p>
-          <h2 class="section__title">오늘의 운영 팁</h2>
-          <p class="section__desc">커플 여행 감성과 컨디션 관리를 동시에 잡기 위한 메모만 남겼습니다.</p>
+          <h2 class="section__title">오늘을 부드럽게 끝내는 메모</h2>
+          <p class="section__desc">커플 여행의 분위기와 컨디션 관리를 함께 지키기 위한 메모만 남겼습니다.</p>
         </div>
       </div>
       <div class="editorial-grid editorial-grid--compact">
@@ -673,8 +673,8 @@ function renderActionPanel(data) {
 
   return `
     <section class="action-card article-section article-section--note">
-      <span class="action-card__eyebrow">Quick Note</span>
-      <h2 class="action-card__title">지금 해야 할 일</h2>
+      <span class="action-card__eyebrow">Editor's Note</span>
+      <h2 class="action-card__title">지금 챙길 것</h2>
       <ol class="outline-list outline-list--ordered">
         ${panel.steps.map((step) => `<li class="outline-list__item">${step}</li>`).join("")}
       </ol>
@@ -699,9 +699,9 @@ function renderRelatedRoutes() {
     <section class="article-section">
       <div class="section__header section__header--stacked">
         <div>
-          <p class="section__kicker">관련 페이지</p>
-          <h2 class="section__title">다음에 볼 가이드</h2>
-          <p class="section__desc">고정 하단 메뉴 대신, 기사형 흐름에 맞게 필요한 페이지를 여기서 이어서 보도록 정리했습니다.</p>
+          <p class="section__kicker">이어 읽기</p>
+          <h2 class="section__title">다음에 펼칠 페이지</h2>
+          <p class="section__desc">고정 하단 메뉴 대신, 기사형 흐름에 맞게 다음 페이지를 자연스럽게 이어 보도록 정리했습니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -731,9 +731,9 @@ function renderSourcesSection(sources) {
     <section class="article-section article-section--sources">
       <div class="section__header section__header--stacked">
         <div>
-          <p class="section__kicker">업데이트 및 출처</p>
-          <h2 class="section__title">마지막 확인 메모</h2>
-          <p class="section__desc">운영 시간과 응급 연락처는 출발 직전에 한 번 더 재확인하는 편이 안전합니다.</p>
+          <p class="section__kicker">취재 메모</p>
+          <h2 class="section__title">마지막으로 확인한 출처</h2>
+          <p class="section__desc">운영 시간과 긴급 연락처는 출발 직전에 한 번 더 확인하는 편이 가장 안전합니다.</p>
         </div>
       </div>
       <div class="article-meta-note">
