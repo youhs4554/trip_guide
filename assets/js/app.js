@@ -1,5 +1,6 @@
 const DATA_PATH = "./assets/data/trip-data.json";
 const FALLBACK_SPOT = "./assets/images/fallbacks/spot-fallback.svg";
+const UPDATED_AT = "2026. 3. 9.";
 
 const root = document.getElementById("app");
 const currentPage = document.body.dataset.page || "index";
@@ -8,7 +9,7 @@ bootstrap().catch((error) => {
   console.error(error);
   root.innerHTML = `
     <div class="site-shell">
-      <section class="section">
+      <section class="article-section article-section--error">
         <h1 class="section__title">가이드를 불러오지 못했습니다</h1>
         <p class="section__desc">로컬 데이터 로딩 중 문제가 발생했습니다. 새로고침 후 다시 확인해 주세요.</p>
       </section>
@@ -28,16 +29,10 @@ async function bootstrap() {
   root.innerHTML = `
     <div class="site-shell">
       ${renderTopbar(data)}
-      <div class="${currentPage === "index" || currentPage === "safety" ? "page-grid page-grid--wide" : "page-grid"}">
-        <div class="page-main">
-          ${renderPage(data)}
-        </div>
-        <aside class="action-panel">
-          ${renderActionPanel(data)}
-        </aside>
+      <div class="page-main">
+        ${renderPage(data)}
       </div>
     </div>
-    ${renderFooterNav()}
   `;
 }
 
@@ -59,7 +54,7 @@ function renderTopbar(data) {
     <header class="topbar">
       <div class="topbar__inner">
         <div class="brand">
-          <span class="brand__eyebrow">Taipei Couple Webbook</span>
+          <span class="brand__eyebrow">Taipei Slow Trip Webbook</span>
           <strong class="brand__title">${data.site.title}</strong>
           <span class="brand__meta">${data.site.window} · ${data.site.lodging}</span>
         </div>
@@ -87,68 +82,95 @@ function renderPage(data) {
 }
 
 function renderIndex(data) {
+  const dayOverview = data.days.map((day) => ({
+    title: `${day.navLabel} · ${day.theme}`,
+    summary: day.routeSummary,
+    meta: `${day.dateLabel} · ${day.energy}`
+  }));
+
   return `
-    ${renderHero({
-      eyebrow: `<span class="pill">3박 4일 일정</span><span class="pill pill--warm">숙소 ${data.site.hotelShort}</span>`,
-      title: "둘 다 무리하지 않는\n타이베이 커플 루트",
+    ${renderArticleHeader({
+      eyebrow: "타이베이 커플 가이드",
+      category: "3박 4일 저강도 여행 설계",
+      area: "닝샤 야시장 베이스",
+      title: "실제로 쓰기 좋은\n타이베이 여행 가이드북",
       lead: data.site.summary,
       image: data.site.heroImage,
-      summary: [
-        { label: "항공", value: `${data.site.flights.depart} / ${data.site.flights.return}` },
-        { label: "숙소 위치", value: "닝샤 야시장 도보권 · MRT 접근 편함" },
-        { label: "운영 원칙", value: "계단 최소화 · 휴식 자주 · 과식 금지" }
+      facts: [
+        { label: "출국", value: data.site.flights.depart },
+        { label: "귀국", value: data.site.flights.return },
+        { label: "숙소", value: data.site.lodging }
       ]
     })}
 
-    <section class="section">
-      <div class="section__header">
+    ${renderSectionTabs([
+      { id: "overview", label: "개요" },
+      { id: "route", label: "날짜별 루트" },
+      { id: "practical", label: "건강·준비" },
+      { id: "links", label: "링크" }
+    ])}
+
+    ${renderActionPanel(data)}
+
+    <section id="overview" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">한눈에 보는 일정</h2>
-          <p class="section__desc">제공된 Google Maps 앵커를 기준으로 동선을 정리하고, 혼잡도와 체력 소모를 낮추는 방식으로 재구성했습니다.</p>
+          <p class="section__kicker">여행 개요</p>
+          <h2 class="section__title">빠르게 읽는 일정 요약</h2>
+          <p class="section__desc">관광지 숫자를 늘리기보다, 숙소 복귀가 쉽고 식사 타이밍을 관리하기 쉬운 동선만 남겼습니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${data.days
-          .map(
-            (day) => `
-              <article class="quick-card">
-                <div class="spot-card__meta">
-                  <span class="badge badge--blue">${day.dateLabel}</span>
-                  <span class="badge">${day.energy}</span>
-                </div>
-                <h3 class="spot-card__title">${day.navLabel}</h3>
-                <p class="spot-card__summary">${day.theme}</p>
-                <ul class="list">
-                  ${day.headlines.map((item) => `<li>${item}</li>`).join("")}
-                </ul>
-                <div class="cta-row">
-                  <a class="button-link" href="./${day.id}.html">자세히 보기</a>
-                  <a class="button-link button-link--ghost" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">Google Maps</a>
-                </div>
-              </article>
-            `
-          )
-          .join("")}
+      <div class="editorial-grid">
+        ${renderArticleBrief(
+          "핵심 요약",
+          "첫날은 회복, 둘째 날은 Beitou 온천권, 셋째 날은 Tamsui 강변, 마지막 날은 새벽 귀국 루틴으로 구성했습니다.",
+          [
+            "택시와 MRT를 섞어 계단과 장거리 도보를 줄였습니다.",
+            "식사는 실내 좌석 확보, 기름기 조절, 당 보충 가능 여부를 우선했습니다.",
+            "하루 강도가 올라가면 바로 대안 동선으로 내릴 수 있게 설계했습니다."
+          ]
+        )}
+        <div class="article-brief article-brief--muted">
+          <span class="article-brief__label">일정 운용 원칙</span>
+          <p class="article-brief__summary">여행 중에는 컨디션 관리가 일정 완성도보다 우선입니다. 무릎, 당 조절, 위장 부담을 고려해 아래 기준을 고정합니다.</p>
+          <ul class="outline-list">
+            <li class="outline-list__item">오전 시작은 늦춰도 되지만 야간 무리 일정은 추가하지 않기</li>
+            <li class="outline-list__item">30~60분마다 앉을 수 있는 장소를 먼저 확보하기</li>
+            <li class="outline-list__item">야시장은 체류 시간을 줄이고 숙소 복귀 난도가 낮은 날에만 넣기</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="route" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">건강 배려 운영 원칙</h2>
-          <p class="section__desc">진료 지침이 아니라 여행 운영 기준입니다. 무리할 조짐이 보이면 즉시 하루 강도를 낮추는 전제로 구성했습니다.</p>
+          <p class="section__kicker">루트 한눈에 보기</p>
+          <h2 class="section__title">날짜별 이동 흐름</h2>
+          <p class="section__desc">참고한 여행 기사처럼, 먼저 전체 순서를 보고 세부 페이지로 들어가도록 구성했습니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
+      ${renderRouteOverview(dayOverview)}
+      <div class="story-grid story-grid--days">
+        ${data.days.map(renderDayStory).join("")}
+      </div>
+    </section>
+
+    <section id="practical" class="article-section">
+      <div class="section__header section__header--stacked">
+        <div>
+          <p class="section__kicker">건강·준비</p>
+          <h2 class="section__title">출발 전에 고정할 운영 메모</h2>
+          <p class="section__desc">의료 조언이 아니라, 실제 여행 중 결정을 단순하게 만들기 위한 행동 기준입니다.</p>
+        </div>
+      </div>
+      <div class="editorial-grid editorial-grid--compact">
         ${data.healthProfiles
           .map(
             (profile) => `
-              <article class="health-card">
-                <div class="spot-card__meta">
-                  <span class="badge badge--good">${profile.role}</span>
-                  <span class="badge">${profile.age}</span>
-                </div>
-                <h3 class="spot-card__title">${profile.title}</h3>
+              <article class="checklist-card checklist-card--soft">
+                <span class="checklist-card__tag">${profile.role} · ${profile.age}</span>
+                <h3 class="checklist-card__title">${profile.title}</h3>
                 <ul class="list">
                   ${profile.points.map((point) => `<li>${point}</li>`).join("")}
                 </ul>
@@ -157,114 +179,148 @@ function renderIndex(data) {
           )
           .join("")}
       </div>
+      <div class="editorial-grid editorial-grid--compact">
+        ${data.preTripChecklist.map(renderChecklistPanel).join("")}
+      </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="links" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">출발 전 체크</h2>
-          <p class="section__desc">공항과 야시장 모두 현장 자극이 강하므로, 미리 챙기면 당일 체력 손실을 줄일 수 있는 항목만 추렸습니다.</p>
+          <p class="section__kicker">핵심 링크</p>
+          <h2 class="section__title">현장에서 바로 열 링크</h2>
+          <p class="section__desc">Google Maps 앵커와 안전 페이지를 한곳에 모아, 찾느라 시간을 쓰지 않게 했습니다.</p>
         </div>
       </div>
-      <div class="grid grid--3">
-        ${data.preTripChecklist.map(renderBulletCard).join("")}
+      <div class="story-grid story-grid--compact">
+        ${data.site.links.map(renderLinkStory).join("")}
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
-        <div>
-          <h2 class="section__title">핵심 링크</h2>
-          <p class="section__desc">숙소 기준 동선, 응급 대응, 공항 정보는 여기서 바로 열 수 있게 묶었습니다.</p>
-        </div>
-      </div>
-      <div class="source-list">
-        ${data.site.links
-          .map(
-            (link) => `
-              <article class="source-card">
-                <h3 class="source-card__title">${link.title}</h3>
-                <p class="source-card__text">${link.text}</p>
-                <div class="cta-row">
-                  <a class="button-link button-link--ghost" href="${link.url}" target="_blank" rel="noreferrer">바로 열기</a>
-                </div>
-              </article>
-            `
-          )
-          .join("")}
-      </div>
-    </section>
-
+    ${renderRelatedRoutes()}
     ${renderSourcesSection(data.site.sourceRefs)}
   `;
 }
 
 function renderDay(data, day) {
   return `
-    ${renderHero({
-      eyebrow: `<span class="pill">${day.dateLabel}</span><span class="pill pill--neutral">${day.energy}</span>`,
+    ${renderArticleHeader({
+      eyebrow: day.dateLabel,
+      category: "일정 상세",
+      area: day.theme,
       title: day.heroTitle,
       lead: day.heroLead,
       image: day.heroImage,
-      summary: day.summaryCards
+      facts: day.summaryCards
     })}
 
-    <section class="section">
-      <div class="section__header">
+    ${renderSectionTabs([
+      { id: "overview", label: "개요" },
+      { id: "route", label: "동선" },
+      { id: "eats", label: "먹기" },
+      { id: "practical", label: "실전 정보" }
+    ])}
+
+    ${renderActionPanel(data)}
+
+    <section id="overview" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">오늘의 루트</h2>
-          <p class="section__desc">${day.routeSummary}</p>
+          <p class="section__kicker">오늘의 개요</p>
+          <h2 class="section__title">150자 대신 필요한 정보만 요약</h2>
+          <p class="section__desc">이 페이지는 긴 설명보다, 실제 이동 순서와 쉬는 타이밍을 빠르게 판단할 수 있게 구성했습니다.</p>
         </div>
-        <a class="button-link button-link--ghost" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">전체 동선 보기</a>
       </div>
-      <div class="timeline">
-        ${day.timeline.map(renderTimelineCard).join("")}
+      <div class="editorial-grid">
+        ${renderArticleBrief("오늘의 루트", day.routeSummary, day.headlines)}
+        <div class="article-brief article-brief--muted">
+          <span class="article-brief__label">이동 메모</span>
+          <p class="article-brief__summary">전체 동선은 Google Maps 앵커와 함께 보면 더 명확합니다. 현장 판단이 필요할 때는 바로 택시로 전환하는 것이 이 일정의 전제입니다.</p>
+          <div class="cta-row cta-row--editorial">
+            <a class="editorial-link" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">전체 동선 Google Maps</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="route" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
+          <p class="section__kicker">루트 한눈에 보기</p>
+          <h2 class="section__title">시간대별 정차 포인트</h2>
+          <p class="section__desc">참고 페이지의 여행 코스 기사처럼, 먼저 순서를 확인하고 각 구간별 실전 정보로 내려갑니다.</p>
+        </div>
+      </div>
+      ${renderRouteOverview(
+        day.timeline.map((item) => ({
+          title: item.title,
+          summary: item.summary,
+          meta: `${item.time} · ${item.transport}`
+        }))
+      )}
+      <div class="feature-list">
+        ${day.timeline.map((item, index) => renderFeatureStop(item, index)).join("")}
+      </div>
+    </section>
+
+    <section id="eats" class="article-section">
+      <div class="section__header section__header--stacked">
+        <div>
+          <p class="section__kicker">음식·휴식</p>
           <h2 class="section__title">식당과 쉬는 포인트</h2>
-          <p class="section__desc">대기 시간이 길거나 향이 강한 곳은 제외하고, 좌석 확보와 회복 동선이 쉬운 곳 위주로 골랐습니다.</p>
+          <p class="section__desc">줄이 길거나 향이 강한 곳은 제외하고, 좌석 확보와 회복에 유리한 장소만 남겼습니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${day.foodSpots.map(renderSpotCard).join("")}
+      <div class="story-grid story-grid--compact">
+        ${day.foodSpots.map(renderEditorialSpot).join("")}
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="practical" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
+          <p class="section__kicker">실전 정보</p>
           <h2 class="section__title">오늘의 운영 팁</h2>
-          <p class="section__desc">커플 여행 감성과 컨디션 관리를 동시에 잡기 위한 실전 메모입니다.</p>
+          <p class="section__desc">커플 여행 감성과 컨디션 관리를 동시에 잡기 위한 메모만 남겼습니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${day.comfortCards.map(renderBulletCard).join("")}
+      <div class="editorial-grid editorial-grid--compact">
+        ${day.comfortCards.map(renderChecklistPanel).join("")}
       </div>
     </section>
 
+    ${renderRelatedRoutes()}
     ${renderSourcesSection(day.sourceRefs)}
   `;
 }
 
 function renderSafety(data) {
   return `
-    ${renderHero({
-      eyebrow: `<span class="pill pill--warm">위기 대응</span><span class="pill">공항 · 병원 · 분실</span>`,
+    ${renderArticleHeader({
+      eyebrow: "위기 대응",
+      category: "공항 · 병원 · 분실",
+      area: "타이베이 여행 안전 매뉴얼",
       title: "당황하지 않도록\n행동 순서를 미리 고정",
       lead: data.safety.intro,
       image: data.safety.heroImage,
-      summary: data.safety.summaryCards
+      facts: data.safety.summaryCards
     })}
 
-    <section class="section">
-      <div class="section__header">
+    ${renderSectionTabs([
+      { id: "contacts", label: "긴급 연락" },
+      { id: "scenarios", label: "상황별 대응" },
+      { id: "medical", label: "병원" },
+      { id: "prevention", label: "예방" }
+    ])}
+
+    ${renderActionPanel(data)}
+
+    <section id="contacts" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">즉시 연락처</h2>
-          <p class="section__desc">숫자를 외우기 어렵다면 휴대폰 잠금화면 메모와 카카오톡 나에게 보내기에 복사해 두는 구성이 좋습니다.</p>
+          <p class="section__kicker">긴급 연락</p>
+          <h2 class="section__title">먼저 저장할 번호</h2>
+          <p class="section__desc">외우기 어렵다면 잠금화면 메모와 카카오톡 나에게 보내기에 같이 저장해 두는 편이 좋습니다.</p>
         </div>
       </div>
       <div class="table-list">
@@ -284,100 +340,80 @@ function renderSafety(data) {
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="scenarios" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">상황별 대응 순서</h2>
-          <p class="section__desc">증상이 심해지면 즉시 이동을 멈추고, 둘 중 상태가 나은 사람이 연락과 결제를 담당하도록 역할을 나눕니다.</p>
+          <p class="section__kicker">상황별 대응</p>
+          <h2 class="section__title">증상별 즉시 행동 순서</h2>
+          <p class="section__desc">증상이 심해지면 이동을 멈추고, 상태가 더 안정적인 사람이 연락과 결제를 맡는 구조로 역할을 나눕니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${data.safety.scenarios
-          .map(
-            (scenario) => `
-              <article class="scenario-card">
-                <div class="spot-card__meta">
-                  <span class="badge badge--warn">${scenario.tag}</span>
-                </div>
-                <h3 class="spot-card__title">${scenario.title}</h3>
-                <ul class="list">
-                  ${scenario.steps.map((step) => `<li>${step}</li>`).join("")}
-                </ul>
-              </article>
-            `
-          )
-          .join("")}
+      <div class="feature-list feature-list--safety">
+        ${data.safety.scenarios.map((scenario, index) => renderSafetyScenario(scenario, index)).join("")}
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="medical" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">병원 베이스</h2>
-          <p class="section__desc">숙소 인근, 북부 동선, 공황 증상 대응을 고려해 바로 떠올릴 수 있는 거점만 남겼습니다.</p>
+          <p class="section__kicker">병원 베이스</p>
+          <h2 class="section__title">기억해야 할 진료 거점</h2>
+          <p class="section__desc">숙소 인근, 북부 동선, 공황 증상 대응을 고려해 바로 떠올릴 수 있는 곳만 남겼습니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${data.safety.hospitals
-          .map(
-            (hospital) => `
-              <article class="contact-card">
-                <div class="spot-card__meta">
-                  <span class="badge badge--blue">${hospital.area}</span>
-                </div>
-                <h3 class="spot-card__title">${hospital.name}</h3>
-                <p class="spot-card__summary">${hospital.summary}</p>
-                <ul class="list">
-                  <li>${hospital.address}</li>
-                  <li>${hospital.phone}</li>
-                  <li>${hospital.note}</li>
-                </ul>
-              </article>
-            `
-          )
-          .join("")}
+      <div class="story-grid story-grid--compact">
+        ${data.safety.hospitals.map(renderHospitalCard).join("")}
       </div>
     </section>
 
-    <section class="section">
-      <div class="section__header">
+    <section id="prevention" class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
+          <p class="section__kicker">예방 메모</p>
           <h2 class="section__title">분실과 귀국 실패 방지</h2>
-          <p class="section__desc">타오위안 공항 출발이 새벽 항공편이므로, 여권과 약은 체크인 수하물에 넣지 않는 것이 핵심입니다.</p>
+          <p class="section__desc">새벽 공항편 전제이므로 여권, 약, 충전기, 저혈당 대비 간식을 체크인 수하물에 넣지 않는 것이 핵심입니다.</p>
         </div>
       </div>
-      <div class="grid grid--2">
-        ${data.safety.preventionCards.map(renderBulletCard).join("")}
+      <div class="editorial-grid editorial-grid--compact">
+        ${data.safety.preventionCards.map(renderChecklistPanel).join("")}
       </div>
       <p class="footnote">의학적 진단이 아니라 여행 운영 기준입니다. 증상이 빠르게 악화되면 현장 판단보다 즉시 의료기관과 긴급전화 이용을 우선합니다.</p>
     </section>
 
+    ${renderRelatedRoutes()}
     ${renderSourcesSection(data.safety.sourceRefs)}
   `;
 }
 
-function renderHero(config) {
+function renderArticleHeader(config) {
   return `
-    <section class="hero">
-      <div class="hero__grid">
-        <div class="hero__content">
-          <div class="hero__eyebrow">${config.eyebrow}</div>
-          <h1 class="hero__title">${config.title.replace("\n", "<br />")}</h1>
-          <p class="hero__lead">${config.lead}</p>
-          <div class="hero__summary">
-            ${config.summary
+    <section class="article-head">
+      <div class="article-head__meta">
+        <span class="article-head__eyebrow">${config.eyebrow}</span>
+        <span class="article-head__dot"></span>
+        <span class="article-head__category">${config.category}</span>
+        <span class="article-head__dot"></span>
+        <span class="article-head__area">${config.area}</span>
+        <span class="article-head__update">최종 정리 ${UPDATED_AT}</span>
+      </div>
+      <div class="article-head__grid">
+        <div class="article-head__content">
+          <h1 class="article-head__title">${config.title.split("\n").join("<br />")}</h1>
+          <p class="article-head__lead">${config.lead}</p>
+          <div class="article-head__facts">
+            ${config.facts
               .map(
-                (item) => `
-                  <div class="summary-card">
-                    <div class="summary-card__label">${item.label}</div>
-                    <div class="summary-card__value">${item.value}</div>
+                (fact) => `
+                  <div class="article-head__fact">
+                    <span>${fact.label}</span>
+                    <strong>${fact.value}</strong>
                   </div>
                 `
               )
               .join("")}
           </div>
         </div>
-        <div class="hero-visual">
+        <div class="article-head__hero">
           ${renderImage(config.image, config.title)}
         </div>
       </div>
@@ -385,89 +421,242 @@ function renderHero(config) {
   `;
 }
 
-function renderTimelineCard(item) {
+function renderSectionTabs(items) {
   return `
-    <article class="timeline-card">
-      <div class="timeline-card__time">
-        <span>${item.time}</span>
-        <strong class="timeline-card__slot">${item.title}</strong>
-        <span>${item.transport}</span>
+    <nav class="section-tabs" aria-label="섹션 바로가기">
+      ${items
+        .map(
+          (item) => `
+            <a class="section-tabs__link" href="#${item.id}">${item.label}</a>
+          `
+        )
+        .join("")}
+    </nav>
+  `;
+}
+
+function renderArticleBrief(label, summary, points = []) {
+  return `
+    <div class="article-brief">
+      <span class="article-brief__label">${label}</span>
+      <p class="article-brief__summary">${summary}</p>
+      ${points.length ? `<ul class="outline-list">${points.map((point) => `<li class="outline-list__item">${point}</li>`).join("")}</ul>` : ""}
+    </div>
+  `;
+}
+
+function renderRouteOverview(items) {
+  return `
+    <ol class="route-overview">
+      ${items
+        .map(
+          (item, index) => `
+            <li class="route-overview__item">
+              <span class="route-overview__number">${String(index + 1).padStart(2, "0")}</span>
+              <div class="route-overview__body">
+                <strong>${item.title}</strong>
+                <p>${item.summary}</p>
+                <span>${item.meta}</span>
+              </div>
+            </li>
+          `
+        )
+        .join("")}
+    </ol>
+  `;
+}
+
+function renderDayStory(day) {
+  return `
+    <article class="story-card">
+      <div class="story-card__visual">
+        ${renderImage(day.heroImage, day.navLabel)}
       </div>
-      <div class="timeline-card__content">
-        <div class="timeline-card__visual">
-          ${renderImage(item.image, item.title)}
+      <div class="story-card__content">
+        <div class="spot-card__meta">
+          <span class="badge badge--blue">${day.dateLabel}</span>
+          <span class="badge">${day.energy}</span>
         </div>
-        <div class="timeline-card__meta">
-          ${item.badges.map(renderBadge).join("")}
-        </div>
-        <p class="timeline-card__summary">${item.summary}</p>
+        <h3 class="story-card__title">${day.navLabel}</h3>
+        <p class="story-card__summary">${day.theme}</p>
         <ul class="list">
-          ${item.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
+          ${day.headlines.map((item) => `<li>${item}</li>`).join("")}
         </ul>
-        <div class="timeline-card__detail">
-          <div class="detail-box">
-            <div class="detail-box__label">커플 포인트</div>
-            <div class="detail-box__value">${item.coupleTip}</div>
-          </div>
-          <div class="detail-box">
-            <div class="detail-box__label">컨디션 운영</div>
-            <div class="detail-box__value">${item.healthTip}</div>
-          </div>
-        </div>
-        <div class="cta-row">
-          <a class="button-link button-link--ghost" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
-          ${
-            item.backupPlan
-              ? `<a class="button-link button-link--ghost" href="${item.backupPlanUrl || item.mapUrl}" target="_blank" rel="noreferrer">대안 동선</a>`
-              : ""
-          }
+        <div class="cta-row cta-row--editorial">
+          <a class="editorial-link" href="./${day.id}.html">상세 일정 보기</a>
+          <a class="editorial-link editorial-link--muted" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">Google Maps</a>
         </div>
       </div>
     </article>
   `;
 }
 
-function renderSpotCard(item) {
+function renderFeatureStop(item, index) {
   return `
-    <article class="spot-card">
-      <div class="spot-card__visual">
+    <article class="feature-stop">
+      <div class="feature-stop__header">
+        <div class="feature-stop__number">${String(index + 1).padStart(2, "0")}</div>
+        <div class="feature-stop__heading">
+          <p class="feature-stop__kicker">${item.time} · ${item.transport}</p>
+          <h3 class="feature-stop__title">${item.title}</h3>
+        </div>
+        <a class="editorial-link editorial-link--muted" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
+      </div>
+      <div class="feature-stop__image">
         ${renderImage(item.image, item.title)}
       </div>
-      <div class="spot-card__meta">
+      <div class="feature-stop__meta">
         ${item.badges.map(renderBadge).join("")}
       </div>
-      <h3 class="spot-card__title">${item.title}</h3>
-      <p class="spot-card__summary">${item.summary}</p>
-      <ul class="list">
-        ${item.points.map((point) => `<li>${point}</li>`).join("")}
-      </ul>
-      <div class="cta-row">
-        <a class="button-link button-link--ghost" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
+      <p class="feature-stop__summary">${item.summary}</p>
+      <div class="feature-stop__layout">
+        <div class="feature-stop__body">
+          <section class="editorial-note editorial-note--rule">
+            <h4 class="editorial-note__title">이 구간에서 할 일</h4>
+            <ul class="list">
+              ${item.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
+            </ul>
+          </section>
+          <section class="editorial-note editorial-note--columns">
+            <p><strong>커플 포인트</strong>${item.coupleTip}</p>
+            <p><strong>컨디션 운영</strong>${item.healthTip}</p>
+            ${item.backupPlan ? `<p><strong>대안 동선</strong>${item.backupPlan}</p>` : ""}
+          </section>
+        </div>
+        <aside class="feature-stop__aside">
+          <div class="feature-stop__fact">
+            <span>시간대</span>
+            <strong>${item.time}</strong>
+          </div>
+          <div class="feature-stop__fact">
+            <span>이동 수단</span>
+            <strong>${item.transport}</strong>
+          </div>
+          <div class="feature-stop__fact">
+            <span>추천 체류 톤</span>
+            <strong>${pickVisitTone(item.badges)}</strong>
+          </div>
+          <div class="feature-stop__fact">
+            <span>복귀 판단</span>
+            <strong>${item.backupPlan ? "대안 동선 확보" : "현 루트 유지"}</strong>
+          </div>
+        </aside>
       </div>
     </article>
   `;
 }
 
-function renderBulletCard(item) {
+function renderEditorialSpot(item) {
   return `
-    <article class="quick-card">
-      <div class="spot-card__meta">
-        <span class="badge badge--good">${item.tag}</span>
+    <article class="story-card story-card--compact">
+      <div class="story-card__visual">
+        ${renderImage(item.image, item.title)}
       </div>
-      <h3 class="spot-card__title">${item.title}</h3>
+      <div class="story-card__content">
+        <div class="spot-card__meta">
+          ${item.badges.map(renderBadge).join("")}
+        </div>
+        <h3 class="story-card__title">${item.title}</h3>
+        <p class="story-card__summary">${item.summary}</p>
+        <ul class="list">
+          ${item.points.map((point) => `<li>${point}</li>`).join("")}
+        </ul>
+        <div class="cta-row cta-row--editorial">
+          <a class="editorial-link" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+function renderHospitalCard(hospital) {
+  return `
+    <article class="story-card story-card--textonly">
+      <div class="story-card__content">
+        <div class="spot-card__meta">
+          <span class="badge badge--blue">${hospital.area}</span>
+        </div>
+        <h3 class="story-card__title">${hospital.name}</h3>
+        <p class="story-card__summary">${hospital.summary}</p>
+        <ul class="list">
+          <li>${hospital.address}</li>
+          <li>${hospital.phone}</li>
+          <li>${hospital.note}</li>
+        </ul>
+      </div>
+    </article>
+  `;
+}
+
+function renderSafetyScenario(scenario, index) {
+  return `
+    <article class="feature-stop feature-stop--safety">
+      <div class="feature-stop__header">
+        <div class="feature-stop__number">${String(index + 1).padStart(2, "0")}</div>
+        <div class="feature-stop__heading">
+          <p class="feature-stop__kicker">${scenario.tag}</p>
+          <h3 class="feature-stop__title">${scenario.title}</h3>
+        </div>
+      </div>
+      <div class="feature-stop__layout">
+        <div class="feature-stop__body">
+          <section class="editorial-note editorial-note--rule">
+            <h4 class="editorial-note__title">즉시 행동 순서</h4>
+            <ol class="step-list">
+              ${scenario.steps.map((step) => `<li>${step}</li>`).join("")}
+            </ol>
+          </section>
+        </div>
+        <aside class="feature-stop__aside">
+          <div class="feature-stop__fact">
+            <span>우선 행동</span>
+            <strong>${scenario.steps[0]}</strong>
+          </div>
+          <div class="feature-stop__fact">
+            <span>추천 연락</span>
+            <strong>${getScenarioContact(scenario.tag)}</strong>
+          </div>
+        </aside>
+      </div>
+    </article>
+  `;
+}
+
+function renderChecklistPanel(item) {
+  return `
+    <article class="checklist-card">
+      <span class="checklist-card__tag">${item.tag}</span>
+      <h3 class="checklist-card__title">${item.title}</h3>
       <ul class="list">
         ${item.points.map((point) => `<li>${point}</li>`).join("")}
       </ul>
+    </article>
+  `;
+}
+
+function renderLinkStory(link) {
+  const isLocal = link.url.startsWith("./");
+  return `
+    <article class="story-card story-card--textonly">
+      <div class="story-card__content">
+        <h3 class="story-card__title">${link.title}</h3>
+        <p class="story-card__summary">${link.text}</p>
+        <div class="cta-row cta-row--editorial">
+          <a class="editorial-link" href="${link.url}" ${isLocal ? "" : 'target="_blank" rel="noreferrer"'}>바로 열기</a>
+        </div>
+      </div>
     </article>
   `;
 }
 
 function renderBadge(text) {
-  const className = text.includes("주의")
+  const className = text.includes("주의") || text.includes("혼잡")
     ? "badge badge--warn"
-    : text.includes("낮음") || text.includes("회복")
+    : text.includes("낮음") || text.includes("회복") || text.includes("휴식") || text.includes("복귀 쉬움")
       ? "badge badge--good"
-      : "badge";
+      : text.includes("사진") || text.includes("야간")
+        ? "badge badge--blue"
+        : "badge";
   return `<span class="${className}">${text}</span>`;
 }
 
@@ -483,64 +672,50 @@ function renderActionPanel(data) {
       : data.actionPanels[currentPage];
 
   return `
-    <section class="action-card">
+    <section class="action-card article-section article-section--note">
+      <span class="action-card__eyebrow">Quick Note</span>
       <h2 class="action-card__title">지금 해야 할 일</h2>
-      <div class="action-card__body">
-        <ul class="list">
-          ${panel.steps.map((step) => `<li>${step}</li>`).join("")}
-        </ul>
-      </div>
-    </section>
-    <section class="callout">
-      <h2 class="callout__title">${panel.calloutTitle}</h2>
+      <ol class="outline-list outline-list--ordered">
+        ${panel.steps.map((step) => `<li class="outline-list__item">${step}</li>`).join("")}
+      </ol>
+      <div class="action-card__divider"></div>
+      <p class="action-card__kicker">${panel.calloutTitle}</p>
       <p class="callout__text">${panel.calloutText}</p>
     </section>
   `;
 }
 
-function renderFooterNav() {
+function renderRelatedRoutes() {
   const pages = [
-    { id: "index", href: "./index.html", label: "홈" },
-    { id: "day1", href: "./day1.html", label: "Day 1" },
-    { id: "day2", href: "./day2.html", label: "Day 2" },
-    { id: "day3", href: "./day3.html", label: "Day 3" },
-    { id: "day4", href: "./day4.html", label: "Day 4" },
-    { id: "safety", href: "./safety.html", label: "안전" }
+    { id: "index", href: "./index.html", label: "전체 일정", note: "여행 전체 구조와 준비 메모" },
+    { id: "day1", href: "./day1.html", label: "Day 1", note: "도착 회복 · 대도정 · 닝샤" },
+    { id: "day2", href: "./day2.html", label: "Day 2", note: "Beitou · Shilin 중심" },
+    { id: "day3", href: "./day3.html", label: "Day 3", note: "Tamsui · Bali 강변 루트" },
+    { id: "day4", href: "./day4.html", label: "Day 4", note: "귀국 전 마지막 운영 메모" },
+    { id: "safety", href: "./safety.html", label: "안전 매뉴얼", note: "병원 · 분실 · 공항 대응" }
   ];
 
   return `
-    <nav class="footer-nav" aria-label="하단 페이지 이동">
-      ${pages
-        .map(
-          (page) => `
-            <a class="${page.id === currentPage ? "is-active" : ""}" href="${page.href}">
-              ${page.label}
-            </a>
-          `
-        )
-        .join("")}
-    </nav>
-  `;
-}
-
-function renderSourcesSection(sources) {
-  return `
-    <section class="section">
-      <div class="section__header">
+    <section class="article-section">
+      <div class="section__header section__header--stacked">
         <div>
-          <h2 class="section__title">공식 참고 링크</h2>
-          <p class="section__desc">운영 시간, 관광 안내, 긴급 연락처 확인에 쓴 공식 또는 1차 출처입니다.</p>
+          <p class="section__kicker">관련 페이지</p>
+          <h2 class="section__title">다음에 볼 가이드</h2>
+          <p class="section__desc">고정 하단 메뉴 대신, 기사형 흐름에 맞게 필요한 페이지를 여기서 이어서 보도록 정리했습니다.</p>
         </div>
       </div>
-      <div class="source-list">
-        ${sources
+      <div class="story-grid story-grid--compact">
+        ${pages
+          .filter((page) => page.id !== currentPage)
           .map(
-            (source) => `
-              <article class="source-card">
-                <h3 class="source-card__title">${source.title}</h3>
-                <p class="source-card__text">${source.text}</p>
-                <div class="cta-row">
-                  <a class="button-link button-link--ghost" href="${source.url}" target="_blank" rel="noreferrer">출처 보기</a>
+            (page) => `
+              <article class="story-card story-card--textonly">
+                <div class="story-card__content">
+                  <h3 class="story-card__title">${page.label}</h3>
+                  <p class="story-card__summary">${page.note}</p>
+                  <div class="cta-row cta-row--editorial">
+                    <a class="editorial-link" href="${page.href}">페이지 열기</a>
+                  </div>
                 </div>
               </article>
             `
@@ -551,8 +726,70 @@ function renderSourcesSection(sources) {
   `;
 }
 
+function renderSourcesSection(sources) {
+  return `
+    <section class="article-section article-section--sources">
+      <div class="section__header section__header--stacked">
+        <div>
+          <p class="section__kicker">업데이트 및 출처</p>
+          <h2 class="section__title">마지막 확인 메모</h2>
+          <p class="section__desc">운영 시간과 응급 연락처는 출발 직전에 한 번 더 재확인하는 편이 안전합니다.</p>
+        </div>
+      </div>
+      <div class="article-meta-note">
+        <span>최종 정리 ${UPDATED_AT}</span>
+        <span>한국인 여행자 기준으로 재서술</span>
+        <span>중국어 본문 표기 제외</span>
+      </div>
+      <div class="source-list source-list--editorial">
+        ${sources
+          .map(
+            (source) => `
+              <article class="source-card source-card--editorial">
+                <h3 class="source-card__title">${source.title}</h3>
+                <p class="source-card__text">${source.text}</p>
+                <div class="cta-row cta-row--editorial">
+                  <a class="editorial-link editorial-link--muted" href="${source.url}" target="_blank" rel="noreferrer">출처 보기</a>
+                </div>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+  `;
+}
+
+function pickVisitTone(badges) {
+  if (badges.some((badge) => badge.includes("회복") || badge.includes("휴식"))) {
+    return "오래 머무르기";
+  }
+
+  if (badges.some((badge) => badge.includes("혼잡") || badge.includes("주의"))) {
+    return "짧게 보고 빠지기";
+  }
+
+  return "천천히 둘러보기";
+}
+
+function getScenarioContact(tag) {
+  if (tag.includes("공항") || tag.includes("변수")) {
+    return "호텔 프런트 · 예약처 · 항공사";
+  }
+
+  if (tag.includes("도난") || tag.includes("분실")) {
+    return "경찰 110";
+  }
+
+  if (tag.includes("공황")) {
+    return "119 또는 가까운 응급실";
+  }
+
+  return "119 또는 가까운 병원";
+}
+
 function escapeHtml(value) {
-  return value
+  return String(value ?? "")
     .replaceAll("&", "&amp;")
     .replaceAll("<", "&lt;")
     .replaceAll(">", "&gt;")

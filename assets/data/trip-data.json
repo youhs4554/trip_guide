@@ -5,7 +5,7 @@
     "lodging": "앳홈 호텔 난시 · 닝샤 야시장 앞",
     "hotelShort": "앳홈 호텔 난시",
     "summary": "첫날은 도착 회복과 야시장 산책, 둘째 날은 Beitou 온천권과 Shilin 정원, 셋째 날은 Tamsui와 Bali 강변, 마지막 날은 새벽 귀국 루틴으로 끊었습니다. 둘 다 컨디션 변동이 큰 점을 반영해 긴 도보와 급한 환승을 줄이고, 휴식 지점과 식사 타이밍을 미리 고정했습니다.",
-    "heroImage": "./assets/images/places/cover-guide.svg",
+    "heroImage": "./assets/images/places/cover-guide.jpg",
     "flights": {
       "depart": "3/12 22:40 대구 → 3/13 00:30 타오위안",
       "return": "3/16 01:55 타오위안 → 05:20 대구"
@@ -174,7 +174,7 @@
       "energy": "체력 소모 낮음",
       "heroTitle": "도착 다음 날은\n대도정에서 리듬 맞추기",
       "heroLead": "새벽 도착 뒤 무리한 오전 일정을 버리고, 숙소 근처에서 걷는 시간을 짧게 나누는 구조입니다. 첫날부터 멀리 가지 않아도 타이베이의 올드 타운 감성과 야시장 분위기를 충분히 챙길 수 있습니다.",
-      "heroImage": "./assets/images/places/dadaocheng.svg",
+      "heroImage": "./assets/images/places/dadaocheng.jpg",
       "summaryCards": [
         {
           "label": "출발 지점",
@@ -212,7 +212,7 @@
           "badges": ["야간 이동", "도보 적음", "회복 우선"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=At+Home+Hotel+Nanshi+Taipei",
           "backupPlan": "호텔 도착이 더 늦어지면 아침 늦게 시작해도 전체 일정 유지 가능",
-          "image": "./assets/images/places/hotel-ningxia.svg"
+          "image": "./assets/images/places/hotel-ningxia.jpg"
         },
         {
           "time": "11:30-14:30",
@@ -229,7 +229,7 @@
           "badges": ["도보 보통", "계단 적음", "사진 포인트"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dihua+Street+Taipei",
           "backupPlan": "컨디션이 안 좋으면 Dihua Street 일부만 보고 카페에서 오래 쉬기",
-          "image": "./assets/images/places/dihua-street.svg"
+          "image": "./assets/images/places/dihua-street.jpg"
         },
         {
           "time": "15:00-17:00",
@@ -246,7 +246,7 @@
           "badges": ["휴식 추천", "노을 포인트", "도보 적음"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Dadaocheng+Wharf+Taipei",
           "backupPlan": "비가 오면 호텔 근처 카페로 대체",
-          "image": "./assets/images/places/dadaocheng.svg"
+          "image": "./assets/images/places/dadaocheng.jpg"
         },
         {
           "time": "18:00-19:30",
@@ -263,7 +263,7 @@
           "badges": ["야시장 혼잡", "숙소 복귀 쉬움", "서서 먹는 시간 주의"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Ningxia+Night+Market+Taipei",
           "backupPlan": "혼잡하면 테이크아웃 후 호텔 근처 실내 좌석이나 객실에서 먹기",
-          "image": "./assets/images/places/ningxia-night-market.svg"
+          "image": "./assets/images/places/ningxia-night-market.jpg"
         }
       ],
       "foodSpots": [
@@ -277,7 +277,7 @@
           ],
           "badges": ["실내 좌석", "회복 식사", "숙소 근처"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Formosa+Chang+Ningxia+Taipei",
-          "image": "./assets/images/places/hotel-ningxia.svg"
+          "image": "./assets/images/places/hotel-ningxia.jpg"
         },
         {
           "title": "대도정 차 하우스 한 곳 고르기",
@@ -289,7 +289,7 @@
           ],
           "badges": ["저자극 휴식", "사진 포인트", "좌석 확보"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tea+House+Dadaocheng+Taipei",
-          "image": "./assets/images/places/dadaocheng.svg"
+          "image": "./assets/images/places/dadaocheng.jpg"
         }
       ],
       "comfortCards": [
@@ -333,7 +333,7 @@
       "energy": "체력 소모 보통",
       "heroTitle": "Beitou에서 풀고\nShilin에서 정리하는 날",
       "heroLead": "둘째 날은 보기 좋은 곳보다 몸이 편한 곳을 앞에 배치했습니다. 온천 문화 구간은 볼거리가 밀도 있게 모여 있어 이동 거리를 줄일 수 있고, 오후에는 정원형 공간으로 바람을 뺍니다.",
-      "heroImage": "./assets/images/places/beitou-museum.svg",
+      "heroImage": "./assets/images/places/beitou-museum.jpg",
       "summaryCards": [
         {
           "label": "출발 지점",
@@ -371,7 +371,7 @@
           "badges": ["도보 보통", "실내 휴식 가능", "계단 적음"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Beitou+Hot+Spring+Museum",
           "backupPlan": "컨디션이 흔들리면 Thermal Valley 생략 가능",
-          "image": "./assets/images/places/beitou-museum.svg"
+          "image": "./assets/images/places/beitou-museum.jpg"
         },
         {
           "time": "11:40-13:00",
@@ -388,7 +388,7 @@
           "badges": ["냄새 주의", "체류 짧게", "사진 포인트"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Thermal+Valley+Taipei",
           "backupPlan": "Thermal Valley 대신 공원 카페 체류",
-          "image": "./assets/images/places/thermal-valley.svg"
+          "image": "./assets/images/places/thermal-valley.jpg"
         },
         {
           "time": "14:30-17:00",
@@ -405,7 +405,7 @@
           "badges": ["산책형", "휴식 가능", "사진 포인트"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shilin+Official+Residence+Park",
           "backupPlan": "비가 오면 인근 카페나 쇼핑몰 실내 이동",
-          "image": "./assets/images/places/shilin-residence.svg"
+          "image": "./assets/images/places/shilin-residence.jpg"
         },
         {
           "time": "17:30-19:30",
@@ -422,7 +422,7 @@
           "badges": ["실내 식사", "회복 우선", "야시장 생략 권장"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Shilin+District+Taipei+Dinner",
           "backupPlan": "피로가 심하면 호텔 근처 식당으로 바로 복귀",
-          "image": "./assets/images/places/hotel-ningxia.svg"
+          "image": "./assets/images/places/hotel-ningxia.jpg"
         }
       ],
       "foodSpots": [
@@ -436,7 +436,7 @@
           ],
           "badges": ["Beitou", "따뜻한 메뉴", "실내 좌석"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Manlai+Hot+Spring+Ramen+Taipei",
-          "image": "./assets/images/places/beitou-museum.svg"
+          "image": "./assets/images/places/beitou-museum.jpg"
         },
         {
           "title": "Shilin권 정원 근처 카페 한 곳",
@@ -448,7 +448,7 @@
           ],
           "badges": ["저자극 휴식", "화장실 확보", "좌석 우선"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Cafe+near+Shilin+Official+Residence",
-          "image": "./assets/images/places/shilin-residence.svg"
+          "image": "./assets/images/places/shilin-residence.jpg"
         }
       ],
       "comfortCards": [
@@ -492,7 +492,7 @@
       "energy": "체력 소모 보통",
       "heroTitle": "마지막 날은\n강변에서 천천히 끝내기",
       "heroLead": "셋째 날은 해질녘 감성이 좋은 대신 피로가 누적되는 날이기도 합니다. 강변에서 오래 걷기보다 좌석이 있는 카페와 짧은 페리 이동으로 분위기만 챙기고, 밤에는 공항 모드로 전환합니다.",
-      "heroImage": "./assets/images/places/tamsui-old-street.svg",
+      "heroImage": "./assets/images/places/tamsui-old-street.jpg",
       "summaryCards": [
         {
           "label": "출발 지점",
@@ -530,7 +530,7 @@
           "badges": ["짐 관리", "필수 단계", "공항 준비"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=At+Home+Hotel+Nanshi+Taipei",
           "backupPlan": "컨디션이 나쁘면 Bali 구간 생략하고 Tamsui만 운영",
-          "image": "./assets/images/places/hotel-ningxia.svg"
+          "image": "./assets/images/places/hotel-ningxia.jpg"
         },
         {
           "time": "12:00-15:00",
@@ -547,7 +547,7 @@
           "badges": ["강변 감성", "인파 주의", "좌석 우선"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Tamsui+Old+Street",
           "backupPlan": "Old Street가 너무 붐비면 강변 산책로와 카페만 이용",
-          "image": "./assets/images/places/tamsui-old-street.svg"
+          "image": "./assets/images/places/tamsui-old-street.jpg"
         },
         {
           "time": "15:20-17:30",
@@ -564,7 +564,7 @@
           "badges": ["선택 코스", "도보 적음", "노을 포인트"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Bali+Left+Bank+Park",
           "backupPlan": "Bali 생략 후 Tamsui riverside 카페 체류",
-          "image": "./assets/images/places/bali-left-bank.svg"
+          "image": "./assets/images/places/bali-left-bank.jpg"
         },
         {
           "time": "18:00-22:00",
@@ -581,7 +581,7 @@
           "badges": ["귀국 모드", "야간 이동", "정리 우선"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=At+Home+Hotel+Nanshi+Taipei",
           "backupPlan": "피로가 심하면 Tamsui 일정을 당겨 더 일찍 숙소 복귀",
-          "image": "./assets/images/places/fishermans-wharf.svg"
+          "image": "./assets/images/places/fishermans-wharf.jpg"
         }
       ],
       "foodSpots": [
@@ -595,7 +595,7 @@
           ],
           "badges": ["Tamsui", "소량 식사", "대기 줄 체크"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=A+Gei+Tamsui",
-          "image": "./assets/images/places/tamsui-old-street.svg"
+          "image": "./assets/images/places/tamsui-old-street.jpg"
         },
         {
           "title": "강변 카페 또는 Fisherman's Wharf 카페",
@@ -607,7 +607,7 @@
           ],
           "badges": ["휴식 중심", "노을 감상", "좌석 우선"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Fisherman%27s+Wharf+Cafe+Tamsui",
-          "image": "./assets/images/places/fishermans-wharf.svg"
+          "image": "./assets/images/places/fishermans-wharf.jpg"
         }
       ],
       "comfortCards": [
@@ -651,7 +651,7 @@
       "energy": "체력 소모 낮음",
       "heroTitle": "새벽 항공은\n루틴이 전부입니다",
       "heroLead": "마지막 페이지는 관광보다 운영 매뉴얼에 가깝습니다. 새벽 비행은 작은 실수 하나가 크게 피곤해지므로, 짐과 체크인, 컨디션 확인 순서를 미리 고정해 두는 것이 핵심입니다.",
-      "heroImage": "./assets/images/places/airport-night.svg",
+      "heroImage": "./assets/images/places/airport-night.jpg",
       "summaryCards": [
         {
           "label": "핵심 시간",
@@ -689,7 +689,7 @@
           "badges": ["정리 우선", "야간 이동", "필수 단계"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=At+Home+Hotel+Nanshi+Taipei",
           "backupPlan": "차량이 늦으면 바로 호텔 프런트와 예약처에 동시에 연락",
-          "image": "./assets/images/places/hotel-ningxia.svg"
+          "image": "./assets/images/places/hotel-ningxia.jpg"
         },
         {
           "time": "23:00-00:20",
@@ -706,7 +706,7 @@
           "badges": ["소음 주의", "대기 시간", "역할 분담"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taiwan+Taoyuan+International+Airport",
           "backupPlan": "혼잡이 심하면 관광안내소 또는 항공사 카운터에 즉시 문의",
-          "image": "./assets/images/places/airport-night.svg"
+          "image": "./assets/images/places/airport-night.jpg"
         },
         {
           "time": "00:20-01:30",
@@ -723,7 +723,7 @@
           "badges": ["회복 우선", "저자극", "탑승 준비"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taoyuan+Airport+Tourist+Service+Center",
           "backupPlan": "컨디션 저하 시 게이트 직원 또는 관광안내소에 도움 요청",
-          "image": "./assets/images/places/airport-night.svg"
+          "image": "./assets/images/places/airport-night.jpg"
         }
       ],
       "foodSpots": [
@@ -737,7 +737,7 @@
           ],
           "badges": ["공항", "따뜻한 메뉴", "회복 식사"],
           "mapUrl": "https://www.google.com/maps/search/?api=1&query=Taoyuan+Airport+Food+Court",
-          "image": "./assets/images/places/airport-night.svg"
+          "image": "./assets/images/places/airport-night.jpg"
         }
       ],
       "comfortCards": [
@@ -771,7 +771,7 @@
   ],
   "safety": {
     "intro": "병원, 분실, 저혈당, 공황, 공항 지연 대응은 순서가 중요합니다. 먼저 이동을 멈추고, 둘 중 상태가 더 안정적인 사람이 말과 결제를 맡고, 나머지 한 사람은 물과 호흡, 좌석 확보에 집중하는 방식으로 역할을 분리합니다.",
-    "heroImage": "./assets/images/places/airport-night.svg",
+    "heroImage": "./assets/images/places/airport-night.jpg",
     "summaryCards": [
       {
         "label": "응급 전화",

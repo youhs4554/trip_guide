@@ -1,21 +1,49 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#FBF6EE"/>
-  <circle cx="1302" cy="142" r="170" fill="#FFD0A8"/>
-  <circle cx="1228" cy="182" r="84" fill="#FF9E72"/>
-  <path d="M0 605C120 532 244 498 398 545C548 591 642 640 792 628C936 617 1084 520 1240 532C1384 544 1498 611 1600 692V900H0V605Z" fill="#0F8A7A"/>
-  <path d="M0 704C134 646 244 655 364 701C524 763 628 772 776 736C906 704 1038 620 1194 626C1364 634 1492 709 1600 804V900H0V704Z" fill="#24404E"/>
-  <rect x="124" y="124" width="504" height="360" rx="32" fill="#FFFDF9"/>
-  <text x="166" y="218" fill="#0F8A7A" font-family="Pretendard, Arial, sans-serif" font-size="36" font-weight="800">TAIPEI COUPLE WEBBOOK</text>
-  <text x="166" y="300" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="72" font-weight="800">3박 4일</text>
-  <text x="166" y="384" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="72" font-weight="800">낮은 강도 일정</text>
-  <text x="166" y="448" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="32" font-weight="600">닝샤 야시장 · Beitou · Tamsui · 타오위안 공항</text>
-  <rect x="944" y="196" width="210" height="250" rx="24" fill="#FFF6ED"/>
-  <rect x="978" y="232" width="142" height="24" rx="12" fill="#FF8953"/>
-  <rect x="978" y="282" width="142" height="24" rx="12" fill="#24404E" fill-opacity="0.16"/>
-  <rect x="978" y="332" width="102" height="24" rx="12" fill="#24404E" fill-opacity="0.16"/>
-  <rect x="1200" y="160" width="252" height="312" rx="28" fill="#FFFDF9"/>
-  <path d="M1250 414V264C1250 224.235 1282.24 192 1322 192C1361.76 192 1394 224.235 1394 264V414" stroke="#0F8A7A" stroke-width="34" stroke-linecap="round"/>
-  <path d="M1216 414H1428" stroke="#13222C" stroke-width="34" stroke-linecap="round"/>
-  <path d="M104" y="0" />
-  <text x="116" y="804" fill="#FFFDF9" font-family="Pretendard, Arial, sans-serif" font-size="34" font-weight="700">휴식과 감성을 같이 챙기는 타이베이 가이드</text>
+  <defs>
+    <linearGradient id="bg" x1="168" y1="74" x2="1426" y2="830" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8F0"/>
+      <stop offset="1" stop-color="#F2E7D7"/>
+    </linearGradient>
+    <linearGradient id="sky" x1="1038" y1="114" x2="1372" y2="562" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFE2BB"/>
+      <stop offset="1" stop-color="#FF9C72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="48" fill="url(#bg)"/>
+  <rect x="84" y="84" width="1432" height="732" rx="40" fill="#FFFDF9" stroke="#E6D8C8" stroke-width="4"/>
+  <rect x="120" y="120" width="530" height="660" rx="34" fill="#13222C"/>
+  <text x="168" y="190" fill="#88D6C7" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="800" letter-spacing="0.18em">TAIPEI COUPLE WEBBOOK</text>
+  <text x="168" y="292" fill="#FFF8F0" font-family="Pretendard, Arial, sans-serif" font-size="84" font-weight="800">3박 4일</text>
+  <text x="168" y="382" fill="#FFF8F0" font-family="Pretendard, Arial, sans-serif" font-size="84" font-weight="800">커플 가이드</text>
+  <text x="168" y="448" fill="#C5D0D7" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">닝샤 야시장 · Beitou · Tamsui · Taoyuan Airport</text>
+  <rect x="168" y="512" width="154" height="46" rx="23" fill="#FF915C"/>
+  <text x="198" y="543" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="22" font-weight="800">LOW-INTENSITY</text>
+  <rect x="168" y="590" width="420" height="118" rx="28" fill="#1C313D"/>
+  <path d="M208 650H544" stroke="#5C7380" stroke-width="14" stroke-linecap="round"/>
+  <path d="M208 690H468" stroke="#5C7380" stroke-width="14" stroke-linecap="round"/>
+  <rect x="704" y="120" width="764" height="310" rx="34" fill="#FFF3E4" stroke="#F0DCC8" stroke-width="4"/>
+  <circle cx="1250" cy="214" r="130" fill="url(#sky)"/>
+  <path d="M748 350C848 306 944 302 1044 350C1128 392 1210 394 1288 352C1372 304 1422 302 1468 330V430H704V350Z" fill="#0F8A7A"/>
+  <path d="M864 398V282H930V398" stroke="#24404E" stroke-width="14"/>
+  <path d="M930 398V246H1010V398" stroke="#24404E" stroke-width="14"/>
+  <path d="M1010 398V298H1076V398" stroke="#24404E" stroke-width="14"/>
+  <path d="M1134 398V230H1184V398" stroke="#FFF8F0" stroke-width="20" stroke-linecap="round"/>
+  <path d="M1144 392L1270 270" stroke="#FFF8F0" stroke-width="18" stroke-linecap="round"/>
+  <path d="M1270 270L1384 392" stroke="#FFF8F0" stroke-width="18" stroke-linecap="round"/>
+  <rect x="704" y="464" width="242" height="276" rx="30" fill="#FEF7EE" stroke="#EDD9C5" stroke-width="4"/>
+  <circle cx="826" cy="556" r="76" fill="#8FD7C8"/>
+  <circle cx="826" cy="556" r="38" fill="#FDF4E7"/>
+  <path d="M758 660H894" stroke="#24404E" stroke-width="14" stroke-linecap="round" stroke-opacity="0.18"/>
+  <text x="744" y="708" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="26" font-weight="800">Beitou</text>
+  <rect x="978" y="464" width="242" height="276" rx="30" fill="#FDF7EE" stroke="#EDD9C5" stroke-width="4"/>
+  <path d="M1002 656C1072 602 1148 600 1196 632V740H978V686C990 676 996 668 1002 656Z" fill="#6CB1CF"/>
+  <path d="M1044 646C1084 628 1118 622 1160 632" stroke="#FFF8F0" stroke-width="14" stroke-linecap="round"/>
+  <text x="1020" y="708" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="26" font-weight="800">Tamsui</text>
+  <rect x="1252" y="464" width="216" height="276" rx="30" fill="#FDF7EE" stroke="#EDD9C5" stroke-width="4"/>
+  <rect x="1286" y="504" width="148" height="112" rx="22" fill="#243F4C"/>
+  <rect x="1308" y="526" width="104" height="18" rx="9" fill="#FFCA6B"/>
+  <rect x="1308" y="560" width="84" height="18" rx="9" fill="#8FD7C8"/>
+  <path d="M1322 688L1418 622" stroke="#FFCA6B" stroke-width="12" stroke-linecap="round"/>
+  <text x="1284" y="708" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="26" font-weight="800">Airport</text>
+  <text x="728" y="796" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="28" font-weight="600">낮은 강도 동선, 쉬는 타이밍, 응급 대응까지 묶은 여행 브로슈어</text>
 </svg>

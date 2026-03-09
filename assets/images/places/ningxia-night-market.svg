@@ -1,17 +1,21 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#1D2430"/>
-  <circle cx="1324" cy="140" r="168" fill="#FF9E72" fill-opacity="0.22"/>
-  <rect x="0" y="586" width="1600" height="314" fill="#101723"/>
-  <rect x="188" y="214" width="220" height="396" rx="24" fill="#2F4356"/>
-  <rect x="244" y="282" width="108" height="120" rx="14" fill="#FFD7B6"/>
-  <rect x="452" y="174" width="288" height="436" rx="24" fill="#30445B"/>
-  <rect x="516" y="242" width="160" height="114" rx="14" fill="#FF8953"/>
-  <rect x="790" y="234" width="232" height="376" rx="24" fill="#35516A"/>
-  <rect x="1058" y="184" width="364" height="426" rx="24" fill="#274056"/>
-  <rect x="1118" y="258" width="244" height="86" rx="14" fill="#FFCA6B"/>
-  <circle cx="1184" cy="446" r="34" fill="#FFCA6B"/>
-  <circle cx="1260" cy="446" r="34" fill="#FF8953"/>
-  <circle cx="1336" cy="446" r="34" fill="#0F8A7A"/>
-  <text x="118" y="120" fill="#FFF7EE" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Ningxia Night Market</text>
-  <text x="118" y="182" fill="#B8C5CF" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">짧게, 적게, 숙소 복귀를 쉽게 가져가는 첫날 야시장</text>
+  <rect width="1600" height="900" rx="48" fill="#161E29"/>
+  <rect x="94" y="94" width="1412" height="712" rx="40" fill="#1E2A36" stroke="#334657" stroke-width="4"/>
+  <circle cx="1308" cy="188" r="144" fill="#FF9B71" fill-opacity="0.22"/>
+  <rect x="150" y="576" width="1300" height="156" rx="24" fill="#10161F"/>
+  <rect x="170" y="254" width="246" height="322" rx="26" fill="#304153"/>
+  <rect x="206" y="320" width="172" height="80" rx="14" fill="#FFD36B"/>
+  <rect x="454" y="220" width="310" height="356" rx="26" fill="#35495F"/>
+  <rect x="510" y="286" width="196" height="88" rx="16" fill="#FF8953"/>
+  <rect x="806" y="256" width="244" height="320" rx="26" fill="#3D576E"/>
+  <rect x="1092" y="194" width="322" height="382" rx="26" fill="#294156"/>
+  <rect x="1146" y="262" width="214" height="70" rx="14" fill="#FFE29D"/>
+  <circle cx="1164" cy="454" r="34" fill="#FFD36B"/>
+  <circle cx="1240" cy="454" r="34" fill="#FF8953"/>
+  <circle cx="1316" cy="454" r="34" fill="#0F8A7A"/>
+  <path d="M176 188H626" stroke="#88D6C7" stroke-width="12" stroke-linecap="round" stroke-dasharray="10 18"/>
+  <circle cx="176" cy="188" r="10" fill="#88D6C7"/>
+  <circle cx="626" cy="188" r="10" fill="#FF8953"/>
+  <text x="148" y="168" fill="#FFF7EE" font-family="Pretendard, Arial, sans-serif" font-size="58" font-weight="800">Ningxia Night Market</text>
+  <text x="148" y="770" fill="#B8C5CF" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">짧게 둘러도 타이베이 밤 분위기가 확실히 남는 푸드 스트리트</text>
 </svg>

@@ -55,3 +55,4 @@ https://<github-username>.github.io/<repo>/
 - 모든 자산 경로는 상대 경로 기준이라 GitHub Pages 하위 경로에서도 동작합니다.
 - 이미지가 로드되지 않으면 공통 fallback SVG로 대체됩니다.
 - 외부 링크는 새 탭에서 열리도록 구성했습니다.
+- 실제 사진 출처와 라이선스는 `assets/images/PHOTO_CREDITS.md`에 정리했습니다.

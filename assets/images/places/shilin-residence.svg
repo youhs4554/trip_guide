@@ -1,15 +1,17 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#F8F6EF"/>
-  <circle cx="1302" cy="152" r="152" fill="#FFE0BF"/>
-  <path d="M0 672C178 620 306 606 492 660C672 712 852 736 1046 682C1208 638 1352 620 1600 668V900H0V672Z" fill="#2B5D43"/>
-  <path d="M0 758C184 708 334 706 500 748C656 786 820 804 1000 760C1200 710 1384 710 1600 760V900H0V758Z" fill="#24404E"/>
-  <rect x="266" y="246" width="610" height="278" rx="30" fill="#FFFDF9"/>
-  <path d="M306 488V300H836V488" stroke="#13222C" stroke-width="16"/>
-  <path d="M572 246V524" stroke="#13222C" stroke-width="16"/>
-  <rect x="980" y="314" width="400" height="210" rx="105" fill="#BFE5A8"/>
-  <circle cx="1050" cy="354" r="60" fill="#8ECF73"/>
-  <circle cx="1166" cy="334" r="76" fill="#97D57D"/>
-  <circle cx="1282" cy="354" r="60" fill="#8BCF80"/>
-  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Shilin Official Residence Park</text>
-  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">정원, 그늘, 벤치가 있어 오후에 느슨하게 걷기 좋은 구간</text>
+  <rect width="1600" height="900" rx="48" fill="#F7F5EE"/>
+  <rect x="104" y="104" width="1392" height="692" rx="40" fill="#FFFDF9" stroke="#E6DDCF" stroke-width="4"/>
+  <circle cx="1280" cy="190" r="128" fill="#FFE5C4"/>
+  <path d="M146 628C248 578 358 566 468 612C594 666 734 686 892 646C1014 614 1118 568 1254 574C1368 578 1430 600 1454 612V704H146V628Z" fill="#3E7B57"/>
+  <path d="M146 682C288 648 414 650 540 688C690 734 846 740 1012 698C1190 652 1328 654 1454 688V704H146V682Z" fill="#24404E"/>
+  <rect x="242" y="278" width="604" height="238" rx="28" fill="#FFF8F0"/>
+  <path d="M278 486V322H810V486" stroke="#24404E" stroke-width="16"/>
+  <path d="M544 278V516" stroke="#24404E" stroke-width="16"/>
+  <ellipse cx="1146" cy="448" rx="248" ry="118" fill="#BFE7AA"/>
+  <circle cx="1028" cy="394" r="72" fill="#8ED374"/>
+  <circle cx="1158" cy="366" r="86" fill="#97D67F"/>
+  <circle cx="1286" cy="394" r="70" fill="#8CCC76"/>
+  <rect x="1040" y="508" width="188" height="18" rx="9" fill="#FDF6E8"/>
+  <text x="148" y="178" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="58" font-weight="800">Shilin Official Residence Park</text>
+  <text x="148" y="758" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">꽃과 정원이 화면을 채워 오후에 가볍게 걷고 사진 남기기 좋은 가든 스폿</text>
 </svg>

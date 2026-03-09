@@ -1,13 +1,17 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#F7F2E9"/>
-  <circle cx="1268" cy="146" r="160" fill="#FFD7AB"/>
-  <rect y="602" width="1600" height="298" fill="#24404E"/>
-  <path d="M0 678C144 612 272 612 392 664C510 714 628 740 750 720C900 696 1018 620 1168 624C1322 628 1454 680 1600 756V900H0V678Z" fill="#65A8C7"/>
-  <rect x="190" y="284" width="202" height="286" rx="20" fill="#FFE9D2"/>
-  <rect x="426" y="236" width="262" height="334" rx="20" fill="#F4D0A9"/>
-  <rect x="726" y="264" width="214" height="306" rx="20" fill="#FFF6E8"/>
-  <rect x="980" y="216" width="310" height="354" rx="20" fill="#F2D6B5"/>
-  <path d="M160 570H1360" stroke="#13222C" stroke-width="16" stroke-opacity="0.16"/>
-  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Tamsui Old Street</text>
-  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">강변 풍경, 간단한 먹거리, 마지막 날의 느슨한 분위기를 함께 담기 좋은 곳</text>
+  <rect width="1600" height="900" rx="48" fill="#F8F1E8"/>
+  <rect x="96" y="96" width="1408" height="708" rx="40" fill="#FFFDF9" stroke="#E8DAC9" stroke-width="4"/>
+  <circle cx="1278" cy="188" r="140" fill="#FFD5A8"/>
+  <path d="M140 596C260 536 376 532 494 582C644 644 778 658 926 610C1060 568 1180 522 1456 600V706H140V596Z" fill="#6BAFD1"/>
+  <path d="M140 654C300 622 430 626 560 668C704 714 850 720 1014 678C1188 632 1324 630 1456 664V706H140V654Z" fill="#24404E"/>
+  <rect x="198" y="266" width="214" height="304" rx="22" fill="#FFE9D0"/>
+  <rect x="446" y="220" width="274" height="350" rx="22" fill="#F4D0AA"/>
+  <rect x="756" y="252" width="220" height="318" rx="22" fill="#FFF5E6"/>
+  <rect x="1010" y="208" width="314" height="362" rx="22" fill="#F3D6B6"/>
+  <path d="M1038 590C1102 548 1188 548 1254 590" stroke="#FFF7EF" stroke-width="18" stroke-linecap="round"/>
+  <path d="M192 188H472" stroke="#FF8953" stroke-width="14" stroke-linecap="round" stroke-dasharray="10 18"/>
+  <circle cx="192" cy="188" r="12" fill="#FF8953"/>
+  <circle cx="472" cy="188" r="12" fill="#0F8A7A"/>
+  <text x="146" y="174" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="58" font-weight="800">Tamsui Old Street</text>
+  <text x="146" y="758" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">강변 상점과 석양 톤이 어울려 마지막 날의 느슨한 감성을 만드는 장면</text>
 </svg>

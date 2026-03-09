@@ -1,11 +1,14 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#EFF5F6"/>
-  <circle cx="1294" cy="170" r="158" fill="#FFD8BB"/>
-  <rect y="648" width="1600" height="252" fill="#24404E"/>
-  <path d="M0 708C158 652 282 648 408 692C558 746 700 758 856 724C1020 688 1162 624 1318 642C1454 656 1512 680 1600 734V900H0V708Z" fill="#0F8A7A"/>
-  <path d="M120 610C240 540 354 548 460 596C542 632 634 640 734 612C834 584 920 530 1034 530C1150 530 1248 574 1366 646" stroke="#B8E6DE" stroke-width="24" stroke-linecap="round"/>
-  <circle cx="392" cy="484" r="72" fill="#FFF7EE"/>
-  <circle cx="1168" cy="442" r="88" fill="#FFF7EE"/>
-  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Bali Left Bank</text>
-  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">페리를 탈 여유가 있을 때만 짧게 건너가도 충분한 강변 산책 포인트</text>
+  <rect width="1600" height="900" rx="48" fill="#EEF5F6"/>
+  <rect x="96" y="96" width="1408" height="708" rx="40" fill="#FFFDF9" stroke="#D9E8E7" stroke-width="4"/>
+  <circle cx="1280" cy="188" r="138" fill="#FFE0BC"/>
+  <path d="M144 604C260 548 364 544 474 592C612 652 738 666 882 620C1014 578 1132 526 1456 608V704H144V604Z" fill="#9CD7D0"/>
+  <path d="M144 664C300 628 430 630 556 668C696 710 854 714 1016 674C1186 632 1328 632 1456 664V704H144V664Z" fill="#24404E"/>
+  <path d="M234 564C356 490 468 496 574 548" stroke="#7FBFB4" stroke-width="18" stroke-linecap="round"/>
+  <path d="M858 566C924 520 1008 520 1082 556" stroke="#FFF7EE" stroke-width="18" stroke-linecap="round"/>
+  <rect x="938" y="358" width="220" height="80" rx="40" fill="#FFF7EE"/>
+  <path d="M976 396H1092" stroke="#24404E" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1118" cy="400" r="30" fill="#FF8953"/>
+  <text x="146" y="174" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="58" font-weight="800">Bali Left Bank</text>
+  <text x="146" y="758" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">페리로 짧게 건너가 강변 분위기만 챙겨도 충분한 느슨한 리버사이드 코스</text>
 </svg>

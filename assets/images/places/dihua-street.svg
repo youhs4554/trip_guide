@@ -1,14 +1,19 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#FAF1E6"/>
-  <circle cx="1260" cy="170" r="160" fill="#FFD6AD"/>
-  <path d="M0 736C242 620 426 640 620 724C790 798 950 792 1140 734C1280 690 1406 678 1600 730V900H0V736Z" fill="#24404E"/>
-  <rect x="206" y="220" width="264" height="388" rx="22" fill="#F5E4D4"/>
-  <rect x="250" y="268" width="176" height="110" rx="12" fill="#0F8A7A"/>
-  <rect x="516" y="176" width="304" height="432" rx="22" fill="#FFF7ED"/>
-  <rect x="566" y="234" width="204" height="146" rx="14" fill="#FFB681"/>
-  <rect x="866" y="236" width="246" height="372" rx="22" fill="#F4E7D6"/>
-  <rect x="916" y="286" width="146" height="96" rx="14" fill="#24404E" fill-opacity="0.16"/>
-  <rect x="1148" y="276" width="212" height="332" rx="22" fill="#FFFAF5"/>
-  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Dihua Street</text>
-  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">골목 감성, 찻집, 상점 구경을 느슨하게 이어 가는 첫날 산책</text>
+  <rect width="1600" height="900" rx="48" fill="#FAF2E7"/>
+  <rect x="110" y="120" width="1380" height="660" rx="38" fill="#FFFDF9" stroke="#E7DACB" stroke-width="4"/>
+  <circle cx="1278" cy="196" r="120" fill="#FFE0BC"/>
+  <rect x="170" y="258" width="252" height="352" rx="24" fill="#F5E4D2"/>
+  <rect x="452" y="212" width="330" height="398" rx="24" fill="#EEC69D"/>
+  <rect x="812" y="252" width="242" height="358" rx="24" fill="#FFF7EE"/>
+  <rect x="1084" y="236" width="284" height="374" rx="24" fill="#F2DAC0"/>
+  <circle cx="286" cy="226" r="28" fill="#FF8953"/>
+  <circle cx="622" cy="190" r="34" fill="#FF8953"/>
+  <circle cx="938" cy="224" r="28" fill="#FF8953"/>
+  <path d="M286 226V312" stroke="#A2532A" stroke-width="8"/>
+  <path d="M622 190V288" stroke="#A2532A" stroke-width="8"/>
+  <path d="M938 224V306" stroke="#A2532A" stroke-width="8"/>
+  <path d="M1138 344C1168 324 1216 324 1248 344" stroke="#0F8A7A" stroke-width="16" stroke-linecap="round"/>
+  <path d="M1130 414H1298" stroke="#24404E" stroke-width="16" stroke-linecap="round" stroke-opacity="0.16"/>
+  <text x="152" y="182" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="60" font-weight="800">Dihua Street</text>
+  <text x="152" y="744" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">찻집, 간판, 골목 리듬이 살아 있어 천천히 구경해도 장면이 남는 거리</text>
 </svg>

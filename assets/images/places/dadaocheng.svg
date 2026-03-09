@@ -1,14 +1,21 @@
 <svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1600" height="900" rx="48" fill="#FFF7EF"/>
-  <circle cx="1234" cy="152" r="156" fill="#FFD7B6"/>
-  <rect y="614" width="1600" height="286" fill="#24404E"/>
-  <path d="M0 690C182 646 318 650 484 700C628 744 764 764 938 714C1104 666 1250 622 1600 698V900H0V690Z" fill="#0F8A7A"/>
-  <rect x="204" y="274" width="222" height="292" rx="14" fill="#F3E2CD"/>
-  <rect x="446" y="234" width="252" height="332" rx="14" fill="#EBC79E"/>
-  <rect x="716" y="288" width="210" height="278" rx="14" fill="#F4E5D4"/>
-  <rect x="956" y="248" width="238" height="318" rx="14" fill="#ECC9A4"/>
-  <rect x="1216" y="308" width="156" height="258" rx="14" fill="#F5E8D7"/>
-  <path d="M110 596H1488" stroke="#13222C" stroke-width="18" stroke-linecap="round" stroke-opacity="0.14"/>
-  <text x="124" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="64" font-weight="800">Dadaocheng Riverside</text>
-  <text x="124" y="194" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">강변 벤치와 노을, 오래 걷지 않아도 분위기가 남는 구간</text>
+  <rect width="1600" height="900" rx="48" fill="#FBF4EA"/>
+  <rect x="98" y="98" width="1404" height="704" rx="38" fill="#FFFDF9" stroke="#E9D8C5" stroke-width="4"/>
+  <circle cx="1260" cy="212" r="138" fill="#FFD0A9"/>
+  <path d="M142 560C256 500 372 492 486 538C626 594 764 610 908 556C1044 506 1168 468 1458 560V708H142V560Z" fill="#0F8A7A"/>
+  <path d="M142 624C302 574 436 582 570 628C704 676 858 682 1032 626C1180 578 1306 574 1458 624V708H142V624Z" fill="#24404E"/>
+  <rect x="170" y="244" width="290" height="292" rx="20" fill="#F7E8D8"/>
+  <rect x="490" y="214" width="320" height="322" rx="20" fill="#EFCDA9"/>
+  <rect x="840" y="254" width="232" height="282" rx="20" fill="#FFF5E8"/>
+  <rect x="1102" y="230" width="208" height="306" rx="20" fill="#F2D4B3"/>
+  <path d="M220 410H412" stroke="#24404E" stroke-width="14" stroke-opacity="0.16"/>
+  <path d="M220 452H368" stroke="#24404E" stroke-width="14" stroke-opacity="0.16"/>
+  <path d="M552 338H748" stroke="#24404E" stroke-width="14" stroke-opacity="0.16"/>
+  <path d="M552 382H696" stroke="#24404E" stroke-width="14" stroke-opacity="0.16"/>
+  <path d="M222 168H522" stroke="#FF8953" stroke-width="14" stroke-linecap="round" stroke-dasharray="10 18"/>
+  <circle cx="222" cy="168" r="12" fill="#FF8953"/>
+  <circle cx="522" cy="168" r="12" fill="#0F8A7A"/>
+  <path d="M1130 566C1190 534 1276 534 1334 566" stroke="#FFF6EB" stroke-width="20" stroke-linecap="round"/>
+  <text x="142" y="164" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="60" font-weight="800">Dadaocheng Riverside</text>
+  <text x="142" y="762" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">올드타운 파사드와 강변 노을이 한 화면에 잡히는 첫날 포스트카드 구간</text>
 </svg>
