@@ -1,0 +1,14 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#151D27"/>
+  <circle cx="1328" cy="148" r="162" fill="#275EFE" fill-opacity="0.26"/>
+  <rect y="654" width="1600" height="246" fill="#0D141D"/>
+  <rect x="184" y="216" width="1226" height="386" rx="34" fill="#24384A"/>
+  <rect x="230" y="262" width="1134" height="198" rx="22" fill="#365067"/>
+  <rect x="270" y="302" width="356" height="30" rx="15" fill="#FFCA6B"/>
+  <rect x="270" y="356" width="244" height="30" rx="15" fill="#C6D4DE" fill-opacity="0.5"/>
+  <rect x="954" y="286" width="318" height="154" rx="20" fill="#0F8A7A"/>
+  <path d="M782 734L1014 564" stroke="#FFCA6B" stroke-width="22" stroke-linecap="round"/>
+  <path d="M714 756L1168 418" stroke="#FFCA6B" stroke-width="22" stroke-linecap="round"/>
+  <text x="118" y="130" fill="#FFF7EE" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Taoyuan Airport Night Run</text>
+  <text x="118" y="192" fill="#B8C5CF" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">새벽 항공편은 루틴과 역할 분담이 가장 중요합니다</text>
+</svg>

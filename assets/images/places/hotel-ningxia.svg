@@ -1,0 +1,14 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F9F2E9"/>
+  <rect y="612" width="1600" height="288" fill="#243F4C"/>
+  <rect x="208" y="198" width="514" height="430" rx="28" fill="#FFFDF9"/>
+  <rect x="250" y="246" width="430" height="334" rx="22" fill="#F4E7D8"/>
+  <rect x="776" y="146" width="312" height="482" rx="28" fill="#FFF8F0"/>
+  <rect x="842" y="210" width="180" height="256" rx="18" fill="#0F8A7A"/>
+  <path d="M842 522H1022" stroke="#13222C" stroke-width="30" stroke-linecap="round"/>
+  <circle cx="1030" cy="592" r="100" fill="#FFB681"/>
+  <circle cx="1306" cy="264" r="176" fill="#FFE0C2"/>
+  <text x="124" y="122" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">At Home Hotel Nanshi</text>
+  <text x="124" y="184" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">닝샤 야시장 도보권 · 늦은 밤 복귀가 쉬운 베이스캠프</text>
+  <text x="1226" y="704" fill="#FFFDF9" font-family="Pretendard, Arial, sans-serif" font-size="34" font-weight="800">Ningxia Base</text>
+</svg>

@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F6F2EC"/>
+  <circle cx="1298" cy="176" r="160" fill="#FFCAA3"/>
+  <rect y="654" width="1600" height="246" fill="#1F3442"/>
+  <path d="M0 708C188 664 362 670 560 726C708 768 882 768 1058 718C1230 670 1414 658 1600 710V900H0V708Z" fill="#63A8C8"/>
+  <path d="M1028 610V288C1028 256.369 1053.37 230 1085 230H1099C1130.63 230 1156 255.369 1156 287V610" stroke="#FFF7EF" stroke-width="26" stroke-linecap="round"/>
+  <path d="M1038 604L1262 360" stroke="#FFF7EF" stroke-width="24" stroke-linecap="round"/>
+  <path d="M1262 360L1466 604" stroke="#FFF7EF" stroke-width="24" stroke-linecap="round"/>
+  <rect x="256" y="540" width="376" height="74" rx="37" fill="#FFF7EF"/>
+  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Fisherman's Wharf</text>
+  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">해질녘 분위기는 좋지만 피로가 누적되면 카페에서 바라보기만 해도 충분한 마무리 포인트</text>
+</svg>

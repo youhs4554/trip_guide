@@ -1,0 +1,11 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#EFF5F6"/>
+  <circle cx="1294" cy="170" r="158" fill="#FFD8BB"/>
+  <rect y="648" width="1600" height="252" fill="#24404E"/>
+  <path d="M0 708C158 652 282 648 408 692C558 746 700 758 856 724C1020 688 1162 624 1318 642C1454 656 1512 680 1600 734V900H0V708Z" fill="#0F8A7A"/>
+  <path d="M120 610C240 540 354 548 460 596C542 632 634 640 734 612C834 584 920 530 1034 530C1150 530 1248 574 1366 646" stroke="#B8E6DE" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="392" cy="484" r="72" fill="#FFF7EE"/>
+  <circle cx="1168" cy="442" r="88" fill="#FFF7EE"/>
+  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Bali Left Bank</text>
+  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">페리를 탈 여유가 있을 때만 짧게 건너가도 충분한 강변 산책 포인트</text>
+</svg>

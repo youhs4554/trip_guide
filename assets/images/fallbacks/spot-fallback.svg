@@ -1,0 +1,19 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F5EFE5"/>
+  <circle cx="1280" cy="160" r="180" fill="#FFD7B6"/>
+  <circle cx="280" cy="180" r="140" fill="#CDEBE5"/>
+  <path d="M0 650C160 560 274 598 398 650C541 710 686 742 846 676C1009 609 1179 544 1338 592C1459 628 1512 669 1600 720V900H0V650Z" fill="#24404E"/>
+  <path d="M0 706C138 637 243 668 346 712C498 777 616 792 766 744C947 686 1099 618 1266 648C1388 670 1488 720 1600 792V900H0V706Z" fill="#0F8A7A"/>
+  <rect x="252" y="266" width="252" height="214" rx="22" fill="#FFFAF5"/>
+  <rect x="286" y="302" width="184" height="22" rx="11" fill="#24404E" fill-opacity="0.12"/>
+  <rect x="286" y="346" width="148" height="22" rx="11" fill="#24404E" fill-opacity="0.12"/>
+  <rect x="286" y="390" width="116" height="22" rx="11" fill="#24404E" fill-opacity="0.12"/>
+  <rect x="1040" y="262" width="284" height="224" rx="26" fill="#FFF7EE"/>
+  <circle cx="1116" cy="336" r="36" fill="#FF8953"/>
+  <circle cx="1194" cy="336" r="36" fill="#0F8A7A"/>
+  <circle cx="1272" cy="336" r="36" fill="#275EFE"/>
+  <path d="M1100 404H1266" stroke="#24404E" stroke-width="18" stroke-linecap="round" stroke-opacity="0.16"/>
+  <path d="M1100 446H1214" stroke="#24404E" stroke-width="18" stroke-linecap="round" stroke-opacity="0.16"/>
+  <text x="108" y="132" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="60" font-weight="800">Taipei Guide Fallback</text>
+  <text x="108" y="200" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">로컬 이미지가 없을 때 노출되는 공통 대체 카드</text>
+</svg>

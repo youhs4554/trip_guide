@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#EDF3EE"/>
+  <circle cx="1338" cy="156" r="166" fill="#DDEDE8"/>
+  <ellipse cx="820" cy="580" rx="470" ry="178" fill="#6BC5AF"/>
+  <ellipse cx="820" cy="596" rx="392" ry="134" fill="#8EE2CB"/>
+  <ellipse cx="820" cy="626" rx="320" ry="94" fill="#A8F0DD"/>
+  <path d="M264 498C318 470 342 416 330 362C324 336 346 318 368 330C396 346 430 392 426 448" stroke="#D5E9E2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M548 446C602 418 626 364 614 310C608 284 630 266 652 278C680 294 714 340 710 396" stroke="#D5E9E2" stroke-width="26" stroke-linecap="round"/>
+  <path d="M1032 454C1086 426 1110 372 1098 318C1092 292 1114 274 1136 286C1164 302 1198 348 1194 404" stroke="#D5E9E2" stroke-width="26" stroke-linecap="round"/>
+  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Thermal Valley</text>
+  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">증기와 냄새가 강한 만큼 짧게 보고 바로 쉬는 운영이 맞는 포인트</text>
+</svg>

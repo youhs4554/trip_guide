@@ -1,0 +1,21 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#FBF6EE"/>
+  <circle cx="1302" cy="142" r="170" fill="#FFD0A8"/>
+  <circle cx="1228" cy="182" r="84" fill="#FF9E72"/>
+  <path d="M0 605C120 532 244 498 398 545C548 591 642 640 792 628C936 617 1084 520 1240 532C1384 544 1498 611 1600 692V900H0V605Z" fill="#0F8A7A"/>
+  <path d="M0 704C134 646 244 655 364 701C524 763 628 772 776 736C906 704 1038 620 1194 626C1364 634 1492 709 1600 804V900H0V704Z" fill="#24404E"/>
+  <rect x="124" y="124" width="504" height="360" rx="32" fill="#FFFDF9"/>
+  <text x="166" y="218" fill="#0F8A7A" font-family="Pretendard, Arial, sans-serif" font-size="36" font-weight="800">TAIPEI COUPLE WEBBOOK</text>
+  <text x="166" y="300" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="72" font-weight="800">3박 4일</text>
+  <text x="166" y="384" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="72" font-weight="800">낮은 강도 일정</text>
+  <text x="166" y="448" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="32" font-weight="600">닝샤 야시장 · Beitou · Tamsui · 타오위안 공항</text>
+  <rect x="944" y="196" width="210" height="250" rx="24" fill="#FFF6ED"/>
+  <rect x="978" y="232" width="142" height="24" rx="12" fill="#FF8953"/>
+  <rect x="978" y="282" width="142" height="24" rx="12" fill="#24404E" fill-opacity="0.16"/>
+  <rect x="978" y="332" width="102" height="24" rx="12" fill="#24404E" fill-opacity="0.16"/>
+  <rect x="1200" y="160" width="252" height="312" rx="28" fill="#FFFDF9"/>
+  <path d="M1250 414V264C1250 224.235 1282.24 192 1322 192C1361.76 192 1394 224.235 1394 264V414" stroke="#0F8A7A" stroke-width="34" stroke-linecap="round"/>
+  <path d="M1216 414H1428" stroke="#13222C" stroke-width="34" stroke-linecap="round"/>
+  <path d="M104" y="0" />
+  <text x="116" y="804" fill="#FFFDF9" font-family="Pretendard, Arial, sans-serif" font-size="34" font-weight="700">휴식과 감성을 같이 챙기는 타이베이 가이드</text>
+</svg>

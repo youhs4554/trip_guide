@@ -1,0 +1,15 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F3F0E6"/>
+  <circle cx="1292" cy="146" r="156" fill="#C8E7DD"/>
+  <path d="M0 664C220 564 432 560 622 652C794 736 984 742 1206 662C1324 620 1452 608 1600 648V900H0V664Z" fill="#0F8A7A"/>
+  <path d="M0 742C190 700 310 700 454 746C608 796 802 808 1016 750C1224 694 1382 690 1600 742V900H0V742Z" fill="#24404E"/>
+  <rect x="212" y="226" width="702" height="348" rx="30" fill="#FFFDF9"/>
+  <path d="M246 546V300C246 267.967 271.967 242 304 242H822C854.033 242 880 267.967 880 300V546" stroke="#13222C" stroke-width="18"/>
+  <path d="M284 420H842" stroke="#13222C" stroke-width="14" stroke-opacity="0.16"/>
+  <path d="M284 356H842" stroke="#13222C" stroke-width="14" stroke-opacity="0.16"/>
+  <rect x="1016" y="248" width="268" height="300" rx="28" fill="#FFF7EF"/>
+  <circle cx="1148" cy="400" r="80" fill="#0F8A7A"/>
+  <circle cx="1148" cy="400" r="38" fill="#FFF7EF"/>
+  <text x="118" y="126" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Beitou Hot Spring Museum</text>
+  <text x="118" y="188" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">온천권 핵심을 짧게 보고 쉬기 좋은 둘째 날 첫 목적지</text>
+</svg>

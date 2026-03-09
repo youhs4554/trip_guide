@@ -1,0 +1,13 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#F7F2E9"/>
+  <circle cx="1268" cy="146" r="160" fill="#FFD7AB"/>
+  <rect y="602" width="1600" height="298" fill="#24404E"/>
+  <path d="M0 678C144 612 272 612 392 664C510 714 628 740 750 720C900 696 1018 620 1168 624C1322 628 1454 680 1600 756V900H0V678Z" fill="#65A8C7"/>
+  <rect x="190" y="284" width="202" height="286" rx="20" fill="#FFE9D2"/>
+  <rect x="426" y="236" width="262" height="334" rx="20" fill="#F4D0A9"/>
+  <rect x="726" y="264" width="214" height="306" rx="20" fill="#FFF6E8"/>
+  <rect x="980" y="216" width="310" height="354" rx="20" fill="#F2D6B5"/>
+  <path d="M160 570H1360" stroke="#13222C" stroke-width="16" stroke-opacity="0.16"/>
+  <text x="118" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="62" font-weight="800">Tamsui Old Street</text>
+  <text x="118" y="192" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">강변 풍경, 간단한 먹거리, 마지막 날의 느슨한 분위기를 함께 담기 좋은 곳</text>
+</svg>

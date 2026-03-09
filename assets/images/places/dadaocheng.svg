@@ -1,0 +1,14 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" rx="48" fill="#FFF7EF"/>
+  <circle cx="1234" cy="152" r="156" fill="#FFD7B6"/>
+  <rect y="614" width="1600" height="286" fill="#24404E"/>
+  <path d="M0 690C182 646 318 650 484 700C628 744 764 764 938 714C1104 666 1250 622 1600 698V900H0V690Z" fill="#0F8A7A"/>
+  <rect x="204" y="274" width="222" height="292" rx="14" fill="#F3E2CD"/>
+  <rect x="446" y="234" width="252" height="332" rx="14" fill="#EBC79E"/>
+  <rect x="716" y="288" width="210" height="278" rx="14" fill="#F4E5D4"/>
+  <rect x="956" y="248" width="238" height="318" rx="14" fill="#ECC9A4"/>
+  <rect x="1216" y="308" width="156" height="258" rx="14" fill="#F5E8D7"/>
+  <path d="M110 596H1488" stroke="#13222C" stroke-width="18" stroke-linecap="round" stroke-opacity="0.14"/>
+  <text x="124" y="130" fill="#13222C" font-family="Pretendard, Arial, sans-serif" font-size="64" font-weight="800">Dadaocheng Riverside</text>
+  <text x="124" y="194" fill="#617684" font-family="Pretendard, Arial, sans-serif" font-size="30" font-weight="600">강변 벤치와 노을, 오래 걷지 않아도 분위기가 남는 구간</text>
+</svg>
