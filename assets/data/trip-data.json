@@ -172,7 +172,7 @@
       "dateLabel": "03.13 금",
       "theme": "대도정 골목과 닝샤의 첫 밤",
       "energy": "체력 소모 낮음",
-      "heroTitle": "타이베이 첫 장면은\n대도정의 느린 오후",
+      "heroTitle": "타이베이 첫 장면은 대도정의 느린 오후",
       "heroLead": "새벽 도착 다음 날은 욕심을 덜어내는 편이 오히려 여행을 길게 살립니다. 숙소에서 멀지 않은 대도정 골목과 강변, 그리고 닝샤의 밤만으로도 첫날의 분위기는 충분히 채워집니다.",
       "heroImage": "./assets/images/places/dadaocheng.jpg",
       "summaryCards": [
@@ -355,7 +355,7 @@
       "dateLabel": "03.14 토",
       "theme": "온천의 김과 정원의 공기",
       "energy": "체력 소모 보통",
-      "heroTitle": "Beitou의 김과\nShilin의 공기 사이",
+      "heroTitle": "Beitou의 김과 Shilin의 공기 사이",
       "heroLead": "둘째 날은 많이 보기보다 몸이 편한 풍경을 차례로 넘기는 날입니다. Beitou에서는 온천의 공기와 오래된 건축을 가볍게 보고, 오후에는 Shilin의 정원에서 속도를 한 번 더 낮춥니다.",
       "heroImage": "./assets/images/places/beitou-museum.jpg",
       "summaryCards": [
@@ -538,7 +538,7 @@
       "dateLabel": "03.15 일",
       "theme": "강변 노을과 느슨한 체크아웃",
       "energy": "체력 소모 보통",
-      "heroTitle": "강변의 바람으로\n마지막 낮을 접기",
+      "heroTitle": "강변의 바람으로 마지막 낮을 접기",
       "heroLead": "셋째 날은 여행의 가장 예쁜 빛과 가장 피곤한 시간이 겹치는 날입니다. Tamsui와 Bali에서는 오래 걷기보다 강을 바라보는 시간을 늘리고, 밤이 되기 전에 마음을 공항 모드로 천천히 돌려놓습니다.",
       "heroImage": "./assets/images/places/tamsui-old-street.jpg",
       "summaryCards": [
@@ -721,7 +721,7 @@
       "dateLabel": "03.16 월",
       "theme": "새벽 공항으로 이어지는 마지막 루틴",
       "energy": "체력 소모 낮음",
-      "heroTitle": "새벽 공항 앞에서는\n루틴이 풍경이 된다",
+      "heroTitle": "새벽 공항 앞에서는 루틴이 풍경이 된다",
       "heroLead": "이 페이지는 관광보다 마감에 가깝습니다. 새벽 항공은 작은 실수도 크게 피곤해지기 때문에, 짐과 체크인, 수분과 혈당 확인 순서를 미리 고정해 두는 편이 가장 안전합니다.",
       "heroImage": "./assets/images/places/airport-night.jpg",
       "summaryCards": [

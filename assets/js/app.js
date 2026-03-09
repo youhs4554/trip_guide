@@ -115,7 +115,7 @@ function renderIndex(data) {
       eyebrow: "타이베이 커플 가이드",
       category: "3박 4일 저강도 여행 설계",
       area: "닝샤 야시장 베이스",
-      title: "천천히 보고 오래 남기는\n타이베이 3박 4일",
+      title: "천천히 보고 오래 남기는 타이베이 3박 4일",
       lead: data.site.summary,
       image: data.site.heroImage,
       facts: [
@@ -322,7 +322,7 @@ function renderSafety(data) {
       eyebrow: "위기 대응",
       category: "공항 · 병원 · 분실",
       area: "타이베이 여행 안전 매뉴얼",
-      title: "당황하지 않도록\n행동 순서를 미리 고정",
+      title: "당황하지 않도록 행동 순서를 미리 고정",
       lead: data.safety.intro,
       image: data.safety.heroImage,
       facts: data.safety.summaryCards
@@ -420,7 +420,7 @@ function renderArticleHeader(config) {
       </div>
       <div class="article-head__grid">
         <div class="article-head__content">
-          <h1 class="article-head__title">${config.title.split("\n").join("<br />")}</h1>
+          <h1 class="article-head__title">${config.title}</h1>
           <p class="article-head__lead">${config.lead}</p>
           <div class="article-head__facts">
             ${config.facts

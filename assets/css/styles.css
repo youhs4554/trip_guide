@@ -41,6 +41,17 @@ body {
     linear-gradient(180deg, #fbfaf6 0%, #f3ede3 100%);
 }
 
+p,
+li,
+strong,
+span,
+h1,
+h2,
+h3,
+h4 {
+  word-break: keep-all;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -109,11 +120,13 @@ textarea {
   font-size: 1.24rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .brand__meta {
   color: var(--muted);
   font-size: 0.94rem;
+  text-wrap: pretty;
 }
 
 .status-strip {
@@ -242,6 +255,7 @@ textarea {
   font-size: clamp(2.2rem, 5vw, 4rem);
   line-height: 1.02;
   letter-spacing: -0.05em;
+  text-wrap: balance;
 }
 
 .article-head__lead {
@@ -250,6 +264,7 @@ textarea {
   color: var(--muted);
   font-size: 1.02rem;
   line-height: 1.78;
+  text-wrap: pretty;
 }
 
 .article-head__facts {
@@ -367,6 +382,7 @@ textarea {
   margin: 0;
   font-size: 1.7rem;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .section__desc {
@@ -374,6 +390,7 @@ textarea {
   max-width: 68ch;
   color: var(--muted);
   line-height: 1.76;
+  text-wrap: pretty;
 }
 
 .editorial-grid {
@@ -411,6 +428,7 @@ textarea {
   margin: 0;
   font-size: 1.02rem;
   line-height: 1.78;
+  text-wrap: pretty;
 }
 
 .outline-list,
@@ -505,6 +523,7 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.68;
+  text-wrap: pretty;
 }
 
 .route-overview__body span {
@@ -554,12 +573,14 @@ textarea {
   margin: 0;
   font-size: 1.16rem;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .story-card__summary {
   margin: 0;
   color: var(--muted);
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .spot-card__meta,
@@ -706,6 +727,7 @@ textarea {
   margin: 0;
   font-size: 1.42rem;
   letter-spacing: -0.03em;
+  text-wrap: balance;
 }
 
 .feature-stop__image {
@@ -725,6 +747,7 @@ textarea {
   max-width: 72ch;
   color: var(--muted);
   line-height: 1.8;
+  text-wrap: pretty;
 }
 
 .feature-stop__layout {
@@ -761,6 +784,7 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.76;
+  text-wrap: pretty;
 }
 
 .editorial-note--columns strong {
@@ -797,6 +821,7 @@ textarea {
 .feature-stop__fact strong {
   font-size: 0.98rem;
   line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .checklist-card {
@@ -822,6 +847,7 @@ textarea {
   margin: 0;
   font-size: 1.1rem;
   letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 .action-card {
@@ -859,6 +885,7 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.74;
+  text-wrap: pretty;
 }
 
 .table-list {
@@ -887,6 +914,7 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .table-row__meta {
@@ -949,6 +977,7 @@ textarea {
   margin: 0;
   color: var(--muted);
   line-height: 1.72;
+  text-wrap: pretty;
 }
 
 .footnote {
