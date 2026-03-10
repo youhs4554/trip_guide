@@ -52,10 +52,10 @@ function getPageTitle(data, page) {
 function renderTopbar(data) {
   const links = [
     { id: "index", href: "./index.html", label: "Home" },
-    { id: "day1", href: "./day1.html", label: "Day 1" },
-    { id: "day2", href: "./day2.html", label: "Day 2" },
-    { id: "day3", href: "./day3.html", label: "Day 3" },
-    { id: "day4", href: "./day4.html", label: "Day 4" },
+    { id: "day1", href: "./day1.html", label: "Day1" },
+    { id: "day2", href: "./day2.html", label: "Day2" },
+    { id: "day3", href: "./day3.html", label: "Day3" },
+    { id: "day4", href: "./day4.html", label: "Day4" },
     { id: "safety", href: "./safety.html", label: "Safety" }
   ];
 
@@ -63,16 +63,10 @@ function renderTopbar(data) {
     <header class="topbar">
       <div class="topbar__inner">
         <div class="topbar__row">
-          <div class="brand">
-            <span class="brand__eyebrow">Taipei Slow Trip Notes</span>
-            <strong class="brand__title">${data.site.title}</strong>
-            <span class="brand__meta">${data.site.window} · ${data.site.lodging}</span>
-          </div>
-          <div class="status-strip">
-            <span class="pill">입국 픽업 완료</span>
-            <span class="pill pill--warm">3/15 22:00 출국 샌딩 완료</span>
-            <span class="pill pill--neutral">저강도 동선 기준</span>
-          </div>
+          <a class="brand" href="./index.html" aria-label="${data.site.title} 홈으로 이동">
+            <span class="brand__eyebrow">Taipei Couple Guide</span>
+            <strong class="brand__title">타이베이 가이드북</strong>
+          </a>
         </div>
         <nav class="topbar__nav" aria-label="상단 페이지 이동">
           ${links
@@ -127,8 +121,8 @@ function renderIndex(data) {
 
     ${renderSectionTabs([
       { id: "overview", label: "개요" },
-      { id: "route", label: "날짜별 루트" },
-      { id: "practical", label: "건강·준비" },
+      { id: "route", label: "루트" },
+      { id: "practical", label: "준비" },
       { id: "links", label: "링크" }
     ])}
 
@@ -139,37 +133,37 @@ function renderIndex(data) {
         <div>
           <p class="section__kicker">여행 개요</p>
           <h2 class="section__title">첫 장에서 읽는 여행의 결</h2>
-          <p class="section__desc">많이 보는 여행이 아니라, 오래 걷지 않아도 장면이 남는 순서로 정리했습니다.</p>
+          <p class="section__desc">처음 화면에서는 핵심 선택 기준만 빠르게 읽히게 정리합니다.</p>
         </div>
       </div>
       <div class="editorial-grid">
         ${renderArticleBrief(
           "편집 노트",
-          "첫 장면은 대도정의 오후, 둘째 장면은 Beitou의 김과 Shilin의 정원, 마지막 바깥 장면은 Tamsui 강변의 바람으로 정리했습니다.",
+          "첫 장면은 대도정, 둘째 날은 Beitou와 Shilin, 마지막은 Tamsui 강변으로 정리했습니다.",
           [
-            "택시와 MRT를 섞어 계단과 장거리 도보를 줄였습니다.",
-            "식사는 실내 좌석 확보, 기름기 조절, 당 보충 가능 여부를 우선했습니다.",
-            "하루 강도가 올라가면 바로 대안 동선으로 내릴 수 있게 설계했습니다."
+            "장거리 도보와 급한 환승을 줄였습니다.",
+            "식사는 좌석 확보와 회복 가능성을 우선했습니다.",
+            "피로가 올라오면 바로 대안 동선으로 내릴 수 있습니다."
           ]
         )}
-        <div class="article-brief article-brief--muted">
-          <span class="article-brief__label">느리게 움직이는 규칙</span>
-          <p class="article-brief__summary">여행의 완성도보다 하루를 끝낼 때의 표정이 더 중요하다는 전제로 움직입니다. 무릎, 당 조절, 위장 부담을 고려해 아래 기준을 고정합니다.</p>
-          <ul class="outline-list">
-            <li class="outline-list__item">오전 시작은 늦춰도 되지만 야간 무리 일정은 추가하지 않기</li>
-            <li class="outline-list__item">30~60분마다 앉을 수 있는 장소를 먼저 확보하기</li>
-            <li class="outline-list__item">야시장은 체류 시간을 줄이고 숙소 복귀 난도가 낮은 날에만 넣기</li>
-          </ul>
-        </div>
+        ${renderArticleBrief(
+          "느리게 움직이는 규칙",
+          "여행의 완성도보다 하루를 끝낼 때의 표정을 먼저 보는 일정입니다.",
+          [
+            "야간 무리 일정은 추가하지 않기",
+            "30~60분마다 앉을 곳 먼저 확보하기",
+            "야시장은 숙소 복귀 쉬운 날에만 짧게 넣기"
+          ]
+        )}
       </div>
     </section>
 
     <section id="route" class="article-section">
       <div class="section__header section__header--stacked">
         <div>
-          <p class="section__kicker">루트 한눈에 보기</p>
+          <p class="section__kicker">루트 요약</p>
           <h2 class="section__title">날짜별 장면과 리듬</h2>
-          <p class="section__desc">먼저 전체 흐름을 보고, 각 날짜의 무드와 휴식 타이밍을 페이지별로 이어 읽는 구조입니다.</p>
+          <p class="section__desc">테마와 핵심 포인트를 먼저 보고, 세부는 펼쳐서 확인합니다.</p>
         </div>
       </div>
       ${renderRouteOverview(dayOverview)}
@@ -182,24 +176,12 @@ function renderIndex(data) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">건강·준비</p>
-          <h2 class="section__title">출발 전에 마음을 가볍게 만드는 메모</h2>
-          <p class="section__desc">의료 조언이 아니라, 낯선 도시에서 결정을 단순하게 만들기 위한 여행 운영 기준입니다.</p>
+          <h2 class="section__title">출발 전에 챙길 핵심만</h2>
+          <p class="section__desc">건강 메모와 체크리스트도 요약 우선으로 구성합니다.</p>
         </div>
       </div>
       <div class="editorial-grid editorial-grid--compact">
-        ${data.healthProfiles
-          .map(
-            (profile) => `
-              <article class="checklist-card checklist-card--soft">
-                <span class="checklist-card__tag">${profile.role} · ${profile.age}</span>
-                <h3 class="checklist-card__title">${profile.title}</h3>
-                <ul class="list">
-                  ${profile.points.map((point) => `<li>${point}</li>`).join("")}
-                </ul>
-              </article>
-            `
-          )
-          .join("")}
+        ${data.healthProfiles.map(renderHealthProfile).join("")}
       </div>
       <div class="editorial-grid editorial-grid--compact">
         ${data.preTripChecklist.map(renderChecklistPanel).join("")}
@@ -211,7 +193,7 @@ function renderIndex(data) {
         <div>
           <p class="section__kicker">핵심 링크</p>
           <h2 class="section__title">현장에선 이 링크만 열면 됩니다</h2>
-          <p class="section__desc">Google Maps 앵커와 안전 페이지를 한곳에 모아, 찾느라 리듬이 끊기지 않게 했습니다.</p>
+          <p class="section__desc">지도와 안전 페이지를 짧은 카드로 유지합니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -240,7 +222,7 @@ function renderDay(data, day) {
       { id: "overview", label: "개요" },
       { id: "route", label: "동선" },
       { id: "eats", label: "먹기" },
-      { id: "practical", label: "실전 정보" }
+      { id: "practical", label: "메모" }
     ])}
 
     ${renderActionPanel(data)}
@@ -250,27 +232,25 @@ function renderDay(data, day) {
         <div>
           <p class="section__kicker">오늘의 개요</p>
           <h2 class="section__title">오늘의 무드와 운영 포인트</h2>
-          <p class="section__desc">긴 설명보다, 오늘 어떤 장면을 남기고 어디서 쉬어야 하는지만 빠르게 보이게 정리했습니다.</p>
+          <p class="section__desc">핵심 선택지만 먼저 읽고 동선을 시작할 수 있게 구성합니다.</p>
         </div>
       </div>
       <div class="editorial-grid">
         ${renderArticleBrief("오늘의 루트", day.routeSummary, day.headlines)}
-        <div class="article-brief article-brief--muted">
-          <span class="article-brief__label">이동 메모</span>
-          <p class="article-brief__summary">전체 동선은 Google Maps 앵커와 함께 보면 훨씬 선명해집니다. 현장에서 흐름이 끊기면 곧바로 택시로 바꾸는 것이 이 일정의 기본값입니다.</p>
-          <div class="cta-row cta-row--editorial">
-            <a class="editorial-link" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">전체 동선 Google Maps</a>
-          </div>
-        </div>
+        ${renderStaticBrief(
+          "이동 메모",
+          "흐름이 끊기면 택시로 전환하는 것이 기본값입니다.",
+          `<div class="cta-row cta-row--editorial"><a class="editorial-link" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">전체 동선 Google Maps</a></div>`
+        )}
       </div>
     </section>
 
     <section id="route" class="article-section">
       <div class="section__header section__header--stacked">
         <div>
-          <p class="section__kicker">루트 한눈에 보기</p>
+          <p class="section__kicker">루트 요약</p>
           <h2 class="section__title">시간대별 장면</h2>
-          <p class="section__desc">먼저 흐름을 보고, 각 구간에서 무엇을 줄이고 무엇을 남길지 바로 판단할 수 있게 구성했습니다.</p>
+          <p class="section__desc">구간별 한 줄 요약과 핵심 1개만 기본 노출합니다.</p>
         </div>
       </div>
       ${renderRouteOverview(
@@ -289,8 +269,8 @@ function renderDay(data, day) {
       <div class="section__header section__header--stacked">
         <div>
           <p class="section__kicker">음식·휴식</p>
-          <h2 class="section__title">앉아서 쉬기 좋은 식탁과 카페</h2>
-          <p class="section__desc">줄이 길거나 향이 강한 곳은 덜어내고, 좌석 확보와 회복에 유리한 장소만 남겼습니다.</p>
+          <h2 class="section__title">앉아서 쉬기 좋은 곳만 남기기</h2>
+          <p class="section__desc">식당과 카페도 기본 화면에서는 한 줄 요약만 보여줍니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -301,9 +281,9 @@ function renderDay(data, day) {
     <section id="practical" class="article-section">
       <div class="section__header section__header--stacked">
         <div>
-          <p class="section__kicker">실전 정보</p>
-          <h2 class="section__title">오늘을 부드럽게 끝내는 메모</h2>
-          <p class="section__desc">커플 여행의 분위기와 컨디션 관리를 함께 지키기 위한 메모만 남겼습니다.</p>
+          <p class="section__kicker">실전 메모</p>
+          <h2 class="section__title">오늘을 부드럽게 끝내는 기준</h2>
+          <p class="section__desc">체크리스트도 핵심 한 줄과 펼쳐보기 구조로 정리합니다.</p>
         </div>
       </div>
       <div class="editorial-grid editorial-grid--compact">
@@ -342,23 +322,11 @@ function renderSafety(data) {
         <div>
           <p class="section__kicker">긴급 연락</p>
           <h2 class="section__title">먼저 저장할 번호</h2>
-          <p class="section__desc">외우기 어렵다면 잠금화면 메모와 카카오톡 나에게 보내기에 같이 저장해 두는 편이 좋습니다.</p>
+          <p class="section__desc">번호는 기본 화면에 그대로 두고 설명은 짧게 정리합니다.</p>
         </div>
       </div>
       <div class="table-list">
-        ${data.safety.emergencyContacts
-          .map(
-            (item) => `
-              <article class="table-row">
-                <div>
-                  <h3 class="table-row__title">${item.title}</h3>
-                  <p class="table-row__text">${item.text}</p>
-                </div>
-                <div class="table-row__meta">${item.value}</div>
-              </article>
-            `
-          )
-          .join("")}
+        ${data.safety.emergencyContacts.map(renderEmergencyRow).join("")}
       </div>
     </section>
 
@@ -367,7 +335,7 @@ function renderSafety(data) {
         <div>
           <p class="section__kicker">상황별 대응</p>
           <h2 class="section__title">증상별 즉시 행동 순서</h2>
-          <p class="section__desc">증상이 심해지면 이동을 멈추고, 상태가 더 안정적인 사람이 연락과 결제를 맡는 구조로 역할을 나눕니다.</p>
+          <p class="section__desc">첫 행동만 기본 노출하고, 전체 절차는 펼쳐서 확인합니다.</p>
         </div>
       </div>
       <div class="feature-list feature-list--safety">
@@ -380,7 +348,7 @@ function renderSafety(data) {
         <div>
           <p class="section__kicker">병원 베이스</p>
           <h2 class="section__title">기억해야 할 진료 거점</h2>
-          <p class="section__desc">숙소 인근, 북부 동선, 공황 증상 대응을 고려해 바로 떠올릴 수 있는 곳만 남겼습니다.</p>
+          <p class="section__desc">병원 정보도 한 줄 요약 후 연락처를 펼쳐보는 방식으로 정리합니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -393,13 +361,13 @@ function renderSafety(data) {
         <div>
           <p class="section__kicker">예방 메모</p>
           <h2 class="section__title">분실과 귀국 실패 방지</h2>
-          <p class="section__desc">새벽 공항편 전제이므로 여권, 약, 충전기, 저혈당 대비 간식을 체크인 수하물에 넣지 않는 것이 핵심입니다.</p>
+          <p class="section__desc">체크인 수하물에 넣지 말아야 할 것 중심으로 압축했습니다.</p>
         </div>
       </div>
       <div class="editorial-grid editorial-grid--compact">
         ${data.safety.preventionCards.map(renderChecklistPanel).join("")}
       </div>
-      <p class="footnote">의학적 진단이 아니라 여행 운영 기준입니다. 증상이 빠르게 악화되면 현장 판단보다 즉시 의료기관과 긴급전화 이용을 우선합니다.</p>
+      <p class="footnote">의학적 진단이 아니라 여행 운영 기준입니다. 증상이 빠르게 악화되면 즉시 의료기관과 긴급전화 이용을 우선합니다.</p>
     </section>
 
     ${renderRelatedRoutes()}
@@ -408,6 +376,9 @@ function renderSafety(data) {
 }
 
 function renderArticleHeader(config) {
+  const lead = getCoreText(config.lead, 82);
+  const facts = pickCoreItems(config.facts, 3);
+
   return `
     <section class="article-head">
       <div class="article-head__meta">
@@ -421,9 +392,9 @@ function renderArticleHeader(config) {
       <div class="article-head__grid">
         <div class="article-head__content">
           <h1 class="article-head__title">${config.title}</h1>
-          <p class="article-head__lead">${config.lead}</p>
+          <p class="article-head__lead">${lead}</p>
           <div class="article-head__facts">
-            ${config.facts
+            ${facts
               .map(
                 (fact) => `
                   <div class="article-head__fact">
@@ -458,12 +429,27 @@ function renderSectionTabs(items) {
 }
 
 function renderArticleBrief(label, summary, points = []) {
+  const coreSummary = getCoreText(summary, 74);
+  const visiblePoints = pickCoreItems(points, 1);
+  const hiddenPoints = points.slice(visiblePoints.length);
+
   return `
-    <div class="article-brief">
+    <article class="article-brief">
       <span class="article-brief__label">${label}</span>
-      <p class="article-brief__summary">${summary}</p>
-      ${points.length ? `<ul class="outline-list">${points.map((point) => `<li class="outline-list__item">${point}</li>`).join("")}</ul>` : ""}
-    </div>
+      <p class="article-brief__summary">${coreSummary}</p>
+      ${visiblePoints.length ? renderList(visiblePoints, "outline-list") : ""}
+      ${hiddenPoints.length ? renderDisclosure("메모 더 보기", renderList(hiddenPoints, "list list--detail")) : ""}
+    </article>
+  `;
+}
+
+function renderStaticBrief(label, summary, content = "") {
+  return `
+    <article class="article-brief article-brief--muted">
+      <span class="article-brief__label">${label}</span>
+      <p class="article-brief__summary">${getCoreText(summary, 72)}</p>
+      ${content}
+    </article>
   `;
 }
 
@@ -477,7 +463,7 @@ function renderRouteOverview(items) {
               <span class="route-overview__number">${String(index + 1).padStart(2, "0")}</span>
               <div class="route-overview__body">
                 <strong>${item.title}</strong>
-                <p>${item.summary}</p>
+                <p>${getCoreText(item.summary, 70)}</p>
                 <span>${item.meta}</span>
               </div>
             </li>
@@ -489,6 +475,15 @@ function renderRouteOverview(items) {
 }
 
 function renderDayStory(day) {
+  const keyPoints = pickCoreItems(day.headlines, 1);
+  const detailContent = `
+    <p class="detail-note">${getDetailText(day.routeSummary, 136)}</p>
+    <div class="cta-row cta-row--editorial">
+      <a class="editorial-link" href="./${day.id}.html">상세 일정 보기</a>
+      <a class="editorial-link editorial-link--muted" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">Google Maps</a>
+    </div>
+  `;
+
   return `
     <article class="story-card">
       <div class="story-card__visual">
@@ -501,19 +496,34 @@ function renderDayStory(day) {
         </div>
         <h3 class="story-card__title">${day.navLabel}</h3>
         <p class="story-card__summary">${day.theme}</p>
-        <ul class="list">
-          ${day.headlines.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
-        <div class="cta-row cta-row--editorial">
-          <a class="editorial-link" href="./${day.id}.html">상세 일정 보기</a>
-          <a class="editorial-link editorial-link--muted" href="${day.dayMapUrl}" target="_blank" rel="noreferrer">Google Maps</a>
-        </div>
+        ${keyPoints.length ? renderList(keyPoints, "list") : ""}
+        ${renderDisclosure("오늘 루트 펼치기", detailContent)}
       </div>
     </article>
   `;
 }
 
 function renderFeatureStop(item, index) {
+  const summary = getCoreText(item.summary, 78);
+  const visibleHighlights = pickCoreItems(item.highlights, 1);
+  const detailContent = `
+    ${renderFactGrid([
+      { label: "시간대", value: item.time },
+      { label: "이동 수단", value: item.transport },
+      { label: "추천 체류", value: pickVisitTone(item.badges) },
+      { label: "복귀 판단", value: item.backupPlan ? "대안 동선 확보" : "현 루트 유지" }
+    ])}
+    ${item.highlights.length ? renderList(item.highlights, "list list--detail") : ""}
+    ${renderDetailCopy([
+      { label: "커플 포인트", text: item.coupleTip },
+      { label: "컨디션 운영", text: item.healthTip },
+      item.backupPlan ? { label: "대안 동선", text: item.backupPlan } : null
+    ])}
+    <div class="cta-row cta-row--editorial">
+      <a class="editorial-link editorial-link--muted" href="${item.mapUrl}" target="_blank" rel="noreferrer">Google Maps 열기</a>
+    </div>
+  `;
+
   return `
     <article class="feature-stop">
       <div class="feature-stop__header">
@@ -522,53 +532,30 @@ function renderFeatureStop(item, index) {
           <p class="feature-stop__kicker">${item.time} · ${item.transport}</p>
           <h3 class="feature-stop__title">${item.title}</h3>
         </div>
-        <a class="editorial-link editorial-link--muted" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
       </div>
       <div class="feature-stop__image">
         ${renderImage(item.image, item.title)}
       </div>
       <div class="feature-stop__meta">
-        ${item.badges.map(renderBadge).join("")}
+        ${pickCoreItems(item.badges, 2).map(renderBadge).join("")}
       </div>
-      <p class="feature-stop__summary">${item.summary}</p>
-      <div class="feature-stop__layout">
-        <div class="feature-stop__body">
-          <section class="editorial-note editorial-note--rule">
-            <h4 class="editorial-note__title">이 구간에서 할 일</h4>
-            <ul class="list">
-              ${item.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
-            </ul>
-          </section>
-          <section class="editorial-note editorial-note--columns">
-            <p><strong>커플 포인트</strong>${item.coupleTip}</p>
-            <p><strong>컨디션 운영</strong>${item.healthTip}</p>
-            ${item.backupPlan ? `<p><strong>대안 동선</strong>${item.backupPlan}</p>` : ""}
-          </section>
-        </div>
-        <aside class="feature-stop__aside">
-          <div class="feature-stop__fact">
-            <span>시간대</span>
-            <strong>${item.time}</strong>
-          </div>
-          <div class="feature-stop__fact">
-            <span>이동 수단</span>
-            <strong>${item.transport}</strong>
-          </div>
-          <div class="feature-stop__fact">
-            <span>추천 체류 톤</span>
-            <strong>${pickVisitTone(item.badges)}</strong>
-          </div>
-          <div class="feature-stop__fact">
-            <span>복귀 판단</span>
-            <strong>${item.backupPlan ? "대안 동선 확보" : "현 루트 유지"}</strong>
-          </div>
-        </aside>
-      </div>
+      <p class="feature-stop__summary">${summary}</p>
+      ${visibleHighlights.length ? renderList(visibleHighlights, "list") : ""}
+      ${renderDisclosure("이 구간 자세히 보기", detailContent)}
     </article>
   `;
 }
 
 function renderEditorialSpot(item) {
+  const summary = getCoreText(item.summary, 72);
+  const visiblePoints = pickCoreItems(item.points, 1);
+  const detailContent = `
+    ${item.points.length ? renderList(item.points, "list list--detail") : ""}
+    <div class="cta-row cta-row--editorial">
+      <a class="editorial-link editorial-link--muted" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
+    </div>
+  `;
+
   return `
     <article class="story-card story-card--compact">
       <div class="story-card__visual">
@@ -576,22 +563,23 @@ function renderEditorialSpot(item) {
       </div>
       <div class="story-card__content">
         <div class="spot-card__meta">
-          ${item.badges.map(renderBadge).join("")}
+          ${pickCoreItems(item.badges, 2).map(renderBadge).join("")}
         </div>
         <h3 class="story-card__title">${item.title}</h3>
-        <p class="story-card__summary">${item.summary}</p>
-        <ul class="list">
-          ${item.points.map((point) => `<li>${point}</li>`).join("")}
-        </ul>
-        <div class="cta-row cta-row--editorial">
-          <a class="editorial-link" href="${item.mapUrl}" target="_blank" rel="noreferrer">지도 열기</a>
-        </div>
+        <p class="story-card__summary">${summary}</p>
+        ${visiblePoints.length ? renderList(visiblePoints, "list") : ""}
+        ${renderDisclosure("메뉴·휴식 포인트 보기", detailContent)}
       </div>
     </article>
   `;
 }
 
 function renderHospitalCard(hospital) {
+  const summary = getCoreText(hospital.summary, 68);
+  const detailContent = `
+    ${renderList([hospital.address, hospital.phone, hospital.note], "list list--detail")}
+  `;
+
   return `
     <article class="story-card story-card--textonly">
       <div class="story-card__content">
@@ -599,18 +587,24 @@ function renderHospitalCard(hospital) {
           <span class="badge badge--blue">${hospital.area}</span>
         </div>
         <h3 class="story-card__title">${hospital.name}</h3>
-        <p class="story-card__summary">${hospital.summary}</p>
-        <ul class="list">
-          <li>${hospital.address}</li>
-          <li>${hospital.phone}</li>
-          <li>${hospital.note}</li>
-        </ul>
+        <p class="story-card__summary">${summary}</p>
+        ${renderDisclosure("연락처·위치 보기", detailContent)}
       </div>
     </article>
   `;
 }
 
 function renderSafetyScenario(scenario, index) {
+  const detailContent = `
+    ${renderFactGrid([
+      { label: "우선 행동", value: scenario.steps[0] },
+      { label: "추천 연락", value: getScenarioContact(scenario.tag) }
+    ])}
+    <ol class="step-list step-list--detail">
+      ${scenario.steps.map((step) => `<li>${step}</li>`).join("")}
+    </ol>
+  `;
+
   return `
     <article class="feature-stop feature-stop--safety">
       <div class="feature-stop__header">
@@ -620,49 +614,64 @@ function renderSafetyScenario(scenario, index) {
           <h3 class="feature-stop__title">${scenario.title}</h3>
         </div>
       </div>
-      <div class="feature-stop__layout">
-        <div class="feature-stop__body">
-          <section class="editorial-note editorial-note--rule">
-            <h4 class="editorial-note__title">즉시 행동 순서</h4>
-            <ol class="step-list">
-              ${scenario.steps.map((step) => `<li>${step}</li>`).join("")}
-            </ol>
-          </section>
-        </div>
-        <aside class="feature-stop__aside">
-          <div class="feature-stop__fact">
-            <span>우선 행동</span>
-            <strong>${scenario.steps[0]}</strong>
-          </div>
-          <div class="feature-stop__fact">
-            <span>추천 연락</span>
-            <strong>${getScenarioContact(scenario.tag)}</strong>
-          </div>
-        </aside>
-      </div>
+      <p class="feature-stop__summary">${getCoreText(scenario.steps[0], 68)}</p>
+      ${renderDisclosure("대응 순서 펼치기", detailContent)}
+    </article>
+  `;
+}
+
+function renderHealthProfile(profile) {
+  const summary = getCoreText(profile.points[0], 74);
+  const detailContent = `
+    ${renderList(profile.points, "list list--detail")}
+  `;
+
+  return `
+    <article class="checklist-card checklist-card--soft">
+      <span class="checklist-card__tag">${profile.role} · ${profile.age}</span>
+      <h3 class="checklist-card__title">${profile.title}</h3>
+      <p class="story-card__summary">${summary}</p>
+      ${renderDisclosure("건강 메모 펼치기", detailContent)}
     </article>
   `;
 }
 
 function renderChecklistPanel(item) {
+  const summary = getCoreText(item.points[0], 72);
+  const detailContent = `
+    ${renderList(item.points, "list list--detail")}
+  `;
+
   return `
     <article class="checklist-card">
       <span class="checklist-card__tag">${item.tag}</span>
       <h3 class="checklist-card__title">${item.title}</h3>
-      <ul class="list">
-        ${item.points.map((point) => `<li>${point}</li>`).join("")}
-      </ul>
+      <p class="story-card__summary">${summary}</p>
+      ${renderDisclosure("체크포인트 펼치기", detailContent)}
+    </article>
+  `;
+}
+
+function renderEmergencyRow(item) {
+  return `
+    <article class="table-row">
+      <div>
+        <h3 class="table-row__title">${item.title}</h3>
+        <p class="table-row__text">${getCoreText(item.text, 62)}</p>
+      </div>
+      <div class="table-row__meta">${item.value}</div>
     </article>
   `;
 }
 
 function renderLinkStory(link) {
   const isLocal = link.url.startsWith("./");
+  const summary = getCoreText(link.text, 62);
   return `
     <article class="story-card story-card--textonly">
       <div class="story-card__content">
         <h3 class="story-card__title">${link.title}</h3>
-        <p class="story-card__summary">${link.text}</p>
+        <p class="story-card__summary">${summary}</p>
         <div class="cta-row cta-row--editorial">
           <a class="editorial-link" href="${link.url}" ${isLocal ? "" : 'target="_blank" rel="noreferrer"'}>바로 열기</a>
         </div>
@@ -671,38 +680,23 @@ function renderLinkStory(link) {
   `;
 }
 
-function renderBadge(text) {
-  const className = text.includes("주의") || text.includes("혼잡")
-    ? "badge badge--warn"
-    : text.includes("낮음") || text.includes("회복") || text.includes("휴식") || text.includes("복귀 쉬움")
-      ? "badge badge--good"
-      : text.includes("사진") || text.includes("야간")
-        ? "badge badge--blue"
-        : "badge";
-  return `<span class="${className}">${text}</span>`;
-}
-
-function renderImage(src, alt) {
-  return `<img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_SPOT}'" />`;
-}
-
 function renderActionPanel(data) {
   const panel = currentPage === "index"
     ? data.actionPanels.index
     : currentPage === "safety"
       ? data.actionPanels.safety
       : data.actionPanels[currentPage];
+  const steps = pickCoreItems(panel.steps, 3);
+  const calloutText = getCoreText(panel.calloutText, 68);
 
   return `
     <section class="action-card article-section article-section--note">
-      <span class="action-card__eyebrow">Editor's Note</span>
+      <span class="action-card__eyebrow">Quick Note</span>
       <h2 class="action-card__title">지금 챙길 것</h2>
+      <p class="callout__text">${calloutText}</p>
       <ol class="outline-list outline-list--ordered">
-        ${panel.steps.map((step) => `<li class="outline-list__item">${step}</li>`).join("")}
+        ${steps.map((step) => `<li class="outline-list__item">${step}</li>`).join("")}
       </ol>
-      <div class="action-card__divider"></div>
-      <p class="action-card__kicker">${panel.calloutTitle}</p>
-      <p class="callout__text">${panel.calloutText}</p>
     </section>
   `;
 }
@@ -723,7 +717,7 @@ function renderRelatedRoutes() {
         <div>
           <p class="section__kicker">이어 읽기</p>
           <h2 class="section__title">다음에 펼칠 페이지</h2>
-          <p class="section__desc">고정 하단 메뉴 대신, 기사형 흐름에 맞게 다음 페이지를 자연스럽게 이어 보도록 정리했습니다.</p>
+          <p class="section__desc">관련 페이지도 짧은 링크 리스트로 정리해 모바일에서 빠르게 이동할 수 있게 둡니다.</p>
         </div>
       </div>
       <div class="story-grid story-grid--compact">
@@ -755,7 +749,7 @@ function renderSourcesSection(sources) {
         <div>
           <p class="section__kicker">취재 메모</p>
           <h2 class="section__title">마지막으로 확인한 출처</h2>
-          <p class="section__desc">운영 시간과 긴급 연락처는 출발 직전에 한 번 더 확인하는 편이 가장 안전합니다.</p>
+          <p class="section__desc">출처도 한 줄 요약만 먼저 보이고, 링크는 펼쳐서 확인합니다.</p>
         </div>
       </div>
       <div class="article-meta-note">
@@ -764,22 +758,101 @@ function renderSourcesSection(sources) {
         <span>중국어 본문 표기 제외</span>
       </div>
       <div class="source-list source-list--editorial">
-        ${sources
-          .map(
-            (source) => `
-              <article class="source-card source-card--editorial">
-                <h3 class="source-card__title">${source.title}</h3>
-                <p class="source-card__text">${source.text}</p>
-                <div class="cta-row cta-row--editorial">
-                  <a class="editorial-link editorial-link--muted" href="${source.url}" target="_blank" rel="noreferrer">출처 보기</a>
-                </div>
-              </article>
-            `
-          )
-          .join("")}
+        ${sources.map(renderSourceCard).join("")}
       </div>
     </section>
   `;
+}
+
+function renderSourceCard(source) {
+  const detailContent = `
+    <div class="cta-row cta-row--editorial">
+      <a class="editorial-link editorial-link--muted" href="${source.url}" target="_blank" rel="noreferrer">출처 보기</a>
+    </div>
+  `;
+
+  return `
+    <article class="source-card source-card--editorial">
+      <h3 class="source-card__title">${source.title}</h3>
+      <p class="source-card__text">${getCoreText(source.text, 70)}</p>
+      ${renderDisclosure("링크 펼치기", detailContent)}
+    </article>
+  `;
+}
+
+function renderDisclosure(label, content) {
+  return `
+    <details class="expandable">
+      <summary class="expandable__summary">
+        <span>${label}</span>
+      </summary>
+      <div class="expandable__content">
+        ${content}
+      </div>
+    </details>
+  `;
+}
+
+function renderList(items, className = "list") {
+  return `
+    <ul class="${className}">
+      ${items.map((item) => `<li>${item}</li>`).join("")}
+    </ul>
+  `;
+}
+
+function renderFactGrid(items) {
+  return `
+    <div class="fact-grid">
+      ${items
+        .map(
+          (item) => `
+            <div class="fact-grid__item">
+              <span class="fact-grid__label">${item.label}</span>
+              <strong class="fact-grid__value">${item.value}</strong>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function renderDetailCopy(items) {
+  const rows = items.filter(Boolean);
+  if (!rows.length) {
+    return "";
+  }
+
+  return `
+    <div class="detail-copy">
+      ${rows
+        .map(
+          (row) => `
+            <div class="detail-copy__row">
+              <span class="detail-copy__label">${row.label}</span>
+              <p class="detail-copy__text">${getDetailText(row.text, 136)}</p>
+            </div>
+          `
+        )
+        .join("")}
+    </div>
+  `;
+}
+
+function renderBadge(text) {
+  const className = text.includes("주의") || text.includes("혼잡")
+    ? "badge badge--warn"
+    : text.includes("낮음") || text.includes("회복") || text.includes("휴식") || text.includes("복귀 쉬움")
+      ? "badge badge--good"
+      : text.includes("사진") || text.includes("야간")
+        ? "badge badge--blue"
+        : "badge";
+  return `<span class="${className}">${text}</span>`;
+}
+
+function renderImage(src, alt) {
+  return `<img src="${src}" alt="${escapeHtml(alt)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_SPOT}'" />`;
 }
 
 function pickVisitTone(badges) {
@@ -808,6 +881,51 @@ function getScenarioContact(tag) {
   }
 
   return "119 또는 가까운 병원";
+}
+
+function pickCoreItems(items, limit = 3) {
+  return Array.isArray(items) ? items.filter(Boolean).slice(0, limit) : [];
+}
+
+function normalizeText(value) {
+  return String(value ?? "").replace(/\s+/g, " ").trim();
+}
+
+function getCoreText(value, maxLength = 96) {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return "";
+  }
+
+  const sentenceMatch = normalized.match(/^.+?[.!?](?=\s|$)/);
+  const sentence = sentenceMatch ? sentenceMatch[0] : normalized;
+
+  if (sentence.length <= maxLength) {
+    return sentence;
+  }
+
+  const clause = sentence
+    .split(/(?:,|·| 그리고 | 하지만 | 그러면 | 이후 )/)[0]
+    ?.trim();
+
+  if (clause && clause.length >= Math.min(30, maxLength - 10)) {
+    return `${clause}…`;
+  }
+
+  return `${sentence.slice(0, maxLength).trimEnd()}…`;
+}
+
+function getDetailText(value, maxLength = 160) {
+  const normalized = normalizeText(value);
+  if (!normalized) {
+    return "";
+  }
+
+  if (normalized.length <= maxLength) {
+    return normalized;
+  }
+
+  return `${normalized.slice(0, maxLength).trimEnd()}…`;
 }
 
 function escapeHtml(value) {
